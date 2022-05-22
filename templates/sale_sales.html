@@ -1,0 +1,41 @@
+{{ define "sales"}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "header"}}
+    </head>
+    <body>
+        <div class="wrapper">
+            {{ template "sidebar" .}}
+            <div class="main-panel">
+                <nav class="navbar navbar-default navbar-fixed">
+                    <div class="container-fluid">
+                        {{template "headbar" .}}
+                    </div>
+                </nav>
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                        {{if (eq .User.Role "admin")}}
+                            {{ template "sales_table" . }}
+                        
+                        {{end}}
+                        
+                        {{if (eq .User.Role "usr")}}
+                            {{ template "sales_table_user" . }}
+                        {{end}}
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{template "footer"}}
+<script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../assets/js/myjs/sales.js"></script>
+</body>
+</html>
+{{ end }}

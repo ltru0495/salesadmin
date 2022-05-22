@@ -1,0 +1,44 @@
+{{ define "login"}}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+{{ template "header"}}
+<link rel="stylesheet" type="text/css" href="../../assets/css/login.css">
+
+<body>
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+
+    <!-- Start Welcome area -->
+    <div class="wrapper">
+        <div style="margin: 10% 35%">
+            <div class="text-center m-b-md custom-login">
+                <h3>Ingresar al Sistema</h3>
+            </div>
+            <div class="content">
+                <div class="card">
+                    <div class="panel-body">
+                        <form action="/entrar" id="loginForm" method="post">
+                            <div class="form-group">
+                                <label class="control-label" for="username">Nombre de usuario</label>
+                                <input type="text" placeholder="Ingrese nombre de usuario" required name="username" id="username" class="form-control">
+                                
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">Contraseña</label>
+                                <input type="password" placeholder="********" required name="password" id="password" class="form-control">
+                            </div>
+                            <button class="btn btn-success btn-block loginbtn">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+
+{{ template "footer" }}
+
+</html>
+{{ end }}

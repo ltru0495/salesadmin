@@ -1,0 +1,85 @@
+{{ define "report"}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "header"}}
+        <link rel="stylesheet" type="text/css" href="../../assets/css/inventory-report.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            {{ template "sidebar" . }}
+            <div class="main-panel">
+                <nav class="navbar navbar-default navbar-fixed">
+                    <div class="container-fluid">
+                        {{template "headbar" .}}
+                    </div>
+                </nav>
+                <div class="content">
+                    {{ template "message" .}}
+                    
+                    <div class="container-fluid">
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h1 class="title">Control de Inventario <button style="float:right" class="btn btn-info btn-fill" id="validate">Validar</button></h1>
+
+                                    </div>
+                                    <div class="card-body content">
+                                        <div style="text-align: center;">
+                                            <span class="center-input"><input type="text" id="code" placeholder="Código"> <button class="btn btn-info btn-fill" id="check">Buscar</button></span>
+                                        </div>
+
+
+                                        <table id="infotable" class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Código</th>
+                                                    <th>Marca</th>
+                                                    <th>Serie</th>
+                                                    <th>Talla</th>
+                                                    <th>Modelo</th>
+                                                    
+                                                    <th>Ubicación Producto</th>
+                                                    <th>Comentario</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{ range .Products }}
+
+                                                <tr id="{{.Code}}" {{if .Check}} class="checked" {{end}} >
+                                                    <td>{{ .Code }}</td>
+                                                    <td>{{ .Brand }}</td>
+                                                    <td>{{ .Serie }}</td>
+                                                    <td>{{ .Size }}</td>
+                                                    <td>{{ .Model }}</td>
+                                                    <td>{{ .Location }}</td>
+                                                    <td>{{ .Note }}</td>
+                                                </tr>
+                                                {{end}}
+                                            </tbody>
+                                        </table>
+
+                                       
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {{template "footer"}}
+    <script type="text/javascript" src="../../assets/js/JsBarcode.all.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/pablo.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/pdfkit.js"></script>
+    <script type="text/javascript" src="../../assets/js/myjs/report.js"></script>
+</body>
+</html>
+{{ end }}

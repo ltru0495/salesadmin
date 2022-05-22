@@ -1,0 +1,75 @@
+{{ define "product_barcodes_print"}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "header"}}
+    </head>
+    <body>
+        <div class="wrapper">
+            {{ template "sidebar" . }}
+            <div class="main-panel">
+                <nav class="navbar navbar-default navbar-fixed">
+                    <div class="container-fluid">
+                        {{template "headbar" .}}
+                    </div>
+                </nav>
+                <div class="content">
+                    
+                    <div class="container-fluid">
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h1 class="title">Imprimir etiquetas 
+                                            <span style="float:right">
+                                            <button  class="btn btn-info btn-fill" id="print">Imprimir Muestra</button>
+                                            <button class="btn btn-info btn-fill" id="print2">Imprimir Almacén </button>
+                                            </span>
+                                            </h1>
+                                    </div>
+
+                                    <div class="card-body ">
+                                        <div style="text-align: center;">
+                                            <span class="center-input"><input type="text" id="code" placeholder="Código"> <button class="btn btn-info btn-fill" id="get">Registrar</button></span>
+                                        </div>
+
+
+                                        <table id="productstable" class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Código</th>
+                                                    <th>Marca</th>
+                                                    <th>Serie</th>
+                                                    <th>Talla</th>
+                                                    <th>Modelo</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-body">
+
+                                                
+                                            </tbody>
+                                        </table>
+
+                                       
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {{template "footer"}}
+    <script type="text/javascript" src="../../assets/js/JsBarcode.all.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/pablo.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/pdfkit.js"></script>
+    <script type="text/javascript" src="../../assets/js/myjs/barcodes_print.js"></script>
+</body>
+</html>
+{{ end }}

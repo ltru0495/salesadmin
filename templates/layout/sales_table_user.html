@@ -1,0 +1,97 @@
+{{ define "sales_table_user" }}
+<div class="card">
+    
+    <div class="header">
+        <h1 class="title">Ventas del día</h1>
+    </div>
+    <div class="card-body">
+        <table id="infotable" class="table">
+            <thead>
+                <tr>
+                    <th>Hora</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Talla</th>
+                    <th>Pertenece</th>
+                    <th>P. Venta</th>
+                    <th>Vendedor</th>
+                    <th>Comentario</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range .Sales }}
+                <tr>
+                    <td> {{ .GetTimestamp }}</td>
+                    <td>{{ .Brand }}</td>
+                    <td>{{ .Model }}</td>
+                    <td>{{ .Size }}</td>
+                    <td>{{ .Location }}</td>
+                    <td>S/ {{ .Price }}</td>
+                    <td>{{ .Seller }}</td>
+                    <td>{{ .Comment }}</td>
+                </tr>
+                {{ end }}
+            </tbody>
+            
+        </table>
+    </div>
+</div>
+<div class="card">
+    <div class="header">
+        <h1 class="title">Cambios y Devoluciones</h1>
+    </div>
+    <div class="card-body">
+        <table id="refundsTable" class="table">
+            <thead>
+                <tr>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Talla</th>
+                    <th>Pertenece</th>
+                    <th>P. Venta</th>
+                    <th>Vendedor</th>
+                    <th>Comentario</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range .Refunds }}
+                <tr>
+                    <td>{{ .Brand }}</td>
+                    <td>{{ .Model }}</td>
+                    <td>{{ .Size }}</td>
+                    <td>{{ .Location }}</td>
+                    <td>S/ {{ .Price }}</td>
+                    <td>{{ .Seller }}</td>
+                    <td>{{ .Comment }}</td>
+                </tr>
+                {{ end }}
+            </tbody>
+            
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <th>Vendedor</th>
+                        <th>Cantidad Vendida</th>
+                    </thead>
+                    <tbody>
+                        {{range .Sellers}}
+                        <tr>
+                            <td>{{.Name}}</td>
+                            <td>{{.Amount}}</td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{{end}}

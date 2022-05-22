@@ -1,0 +1,95 @@
+{{ define "sale_refund"}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "header"}}
+    </head>
+    <body>
+        <div class="wrapper">
+            {{ template "sidebar" .}}
+            <div class="main-panel">
+                <nav class="navbar navbar-default navbar-fixed">
+                    <div class="container-fluid">
+                        {{template "headbar" .}}
+                    </div>
+                </nav>
+                <div class="content">
+                    {{ template "message" .}}
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h1 class="title"> Historial de Ventas</h1>
+                                    </div>
+                                    <div class="card-body content">
+                                        <table id="infotable" class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Hora</th>
+                                                    <th>Código</th>
+                                                    <th>Marca</th>
+                                                    <th>Modelo</th>
+                                                    <th>Talla</th>
+                                                    <th>Precio de Venta</th>
+                                                    <th>Vendedor</th>
+                                                    <th>Lugar de Venta</th>
+                                                    <th>Comentario</th>
+                                                    <th>Devolver</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{ range .Sales }}
+                                                <tr>
+                                                    <td>{{ .GetFullTimestamp }} </td>
+                                                    <td>{{ .Code }}</td>                                                    
+                                                    <td>{{ .Brand }}</td>
+                                                    <td>{{ .Model }}</td>
+                                                    <td>{{ .Size }}</td>
+                                                    <td>S/ {{ .Price }}</td>
+                                                    <td>{{ .Seller }}</td>
+                                                    <td>{{ .Place }}</td>
+                                                    <td>{{ .Comment }}</td>
+                                                    <td>     <button id="{{ .Id.Hex }}" data-toggle="tooltip" title="Devolución" class="refund-button"><i class="refund-icon fas fa-arrow-alt-circle-right"></i></button></td>
+                                                </tr>
+                                                {{ end }}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar Modificación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form">
+                        <div class="form-group">
+                            <label class="col-md-4">Contraseña de Administrador</label>
+                            <input type="password" name="password" id="password">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="confirm" type="button" class="btn btn-primary">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{template "footer"}}
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/myjs/sale_refund.js"></script>
+</body>
+</html>
+{{ end }}

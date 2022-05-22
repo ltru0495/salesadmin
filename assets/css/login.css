@@ -1,0 +1,5 @@
+body {
+	background-image: url("../../assets/img/madohbg.jpeg");
+	 background-size: cover; /* Resize the background image to cover the entire container */
+	color: white;
+}

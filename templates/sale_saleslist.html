@@ -1,0 +1,84 @@
+{{ define "saleslist"}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "header"}}
+    </head>
+    <body>
+        <div class="wrapper">
+            {{ template "sidebar" .}}
+            <div class="main-panel">
+                <nav class="navbar navbar-default navbar-fixed">
+                    <div class="container-fluid">
+                        {{template "headbar" .}}
+                    </div>
+                </nav>
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h1 class="title">Ventas por fecha</h1>
+                                    </div>
+                                    {{if (eq .User.Role "admin")}}
+                                    <div class="card-body">
+                                        <table class="table">
+                                            <thead>
+                                                <th>General</th>
+                                                <th>Cajamarca</th>
+                                                <th>Loreto</th>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                {{ range .Dates }}
+                                                <tr>
+                                                    <td>
+                                                        <a class="salelistitem" href="/ventas/{{.Date}}"> &ensp; {{ .Date }} &ensp;</a> &emsp; <a class="salelistitem" href="/ventas/{{.Date}}/resumen"> <i class="fa fa-download salelistitem" aria-hidden="true"></i> &ensp;</a>
+                                                        <!-- &emsp; <a class="salelistitem" href="/ventas/{{.Date}}/resumen/pdf"> <i class="fa fa-download" aria-hidden="true"></i> &ensp;</a> -->
+                                                    </td>
+                                                    <td>
+                                                        <a class="salelistitem" href="/ventas/cajamarca/{{.Date}}"> &ensp; {{ .Date }} &ensp;</a> &emsp; <a class="salelistitem" href="/ventas/cajamarca/{{.Date}}/resumen"> <i class="fa fa-download salelistitem" aria-hidden="true"></i> &ensp;</a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="salelistitem" href="/ventas/loreto/{{.Date}}"> &ensp; {{ .Date }} &ensp;</a> &emsp; <a class="salelistitem" href="/ventas/loreto/{{.Date}}/resumen"> <i class="fa fa-download salelistitem" aria-hidden="true"></i> &ensp;</a>
+                                                    </td>
+                                                </tr>
+                                                {{ end }}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    {{ end }}
+                                    {{if (eq .User.Role "usr")}}
+                                    <div class="card-body content">
+                                        <table class="table">
+                                            <thead>
+                                                <th>Ver</th>
+                                            </thead>
+                                            <tbody>
+                                                {{ range .Dates }}
+                                                <tr>
+                                                    <td>
+                                                        <a class="salelistitem" href="/ventas/{{.Date}}">{{ .Date }}</a>
+                                                    </td>
+                                                  
+                                                </tr>
+                                                {{ end }}
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    {{ end }}
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    {{template "footer"}}
+</html>
+{{ end }}

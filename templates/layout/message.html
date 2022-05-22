@@ -1,0 +1,13 @@
+{{ define "message"}}
+	{{ if .Error }}
+	    <div class="alert alert-danger" role="alert">
+	        <strong>{{ .Error }}</strong> 
+	    </div>
+	{{ end }}
+
+	{{ if .Success }}
+	    <div class="alert alert-success" role="alert">
+	        <strong>{{ .Success }}</strong> 
+	    </div>
+	{{ end }}
+{{ end }}

@@ -1,0 +1,144 @@
+{{ define "product_view"}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "header"}}
+    </head>
+    <body>
+        <div class="wrapper">
+            {{ template "sidebar" .}}
+            <div class="main-panel">
+                <nav class="navbar navbar-default navbar-fixed">
+                    <div class="container-fluid">
+                        {{template "headbar" .}}
+                    </div>
+                </nav>
+                <div class="content">
+                    {{ template "message" .}}
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="card">
+                                    <div class="header">
+                                        <h1 class="title">Editar Producto</h1>
+                                    </div>
+                                    <div class="content">
+                                        <form action="/producto/{{.Product.Code}}" method="post">
+                                            
+                                            <p class="hidden" id="realcode">{{.Product.Code}}</p>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Código de producto</label>
+                                                        <input type="text" class="form-control" name="code" id="code" readonly value="{{.Product.Code}}">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>C. Fábrica</label>
+                                                        <input type="text" class="form-control" placeholder="Codigo de fabrica" name="pfc" id="pfc" value="{{.Product.PFC}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Marca</label>
+                                                        <input type="text" class="form-control" placeholder="Ingrese marca del producto" minlength="3" name="brand" id="brand" required value="{{.Product.Brand}}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label>Serie</label>
+                                                        <input type="text" class="form-control" id="serie" name="serie" placeholder="21-22" required value="{{.Product.Serie}}">
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Talla</label>
+                                                        <input type="text" class="form-control" placeholder="Ingrese la talla del producto" name="size" id="size" required value="{{.Product.Size}}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Modelo</label>
+                                                        <input type="text" class="form-control" placeholder="Ingrese modelo del producto" name="model" id="model" required value="{{.Product.Model}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Costo</label>
+                                                        <input type="text" class="form-control" placeholder="Ingrese el precio del producto" name="price" id="price" required value="{{.Product.Price}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Ubicación</label>
+                                                        <div>
+                                                            <div class="locOption"> <input id="cajloc" type="radio" name="location" value="CAJAMARCA"  {{ if (eq .Product.Location "CAJAMARCA")}}  checked{{end}}> <label style="font-size:24px;margin-right:18px;" for="cajloc">CAJAMARCA</label> </div>
+                                                            <div class="locOption"><input id="lorloc" type="radio" name="location" value="LORETO"  {{ if (eq .Product.Location "LORETO")}}  checked{{end}}><label style="font-size:24px;" for="lorloc"> LORETO</label></div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Nota</label>
+                                                        <input type="text" class="form-control" id="note" name="note" value="{{.Product.Note}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-info btn-fill pull-right">Guardar</button>
+                                            <div class="clearfix"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirmar Modificación</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form">
+                            <div class="form-group">
+                                <label class="col-md-4">Contraseña de Administrador</label>
+                                <input type="password" name="password" id="password">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="confirm" type="button" class="btn btn-primary">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ template "footer"}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/myjs/product_view.js"></script>
+    </body>
+</html>
+{{ end }}

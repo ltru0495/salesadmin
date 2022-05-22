@@ -1,0 +1,118 @@
+{{ define "sales_query_bkp"}}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{{ template "header"}}
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			{{ template "sidebar" .}}
+			<div class="main-panel">
+				<nav class="navbar navbar-default navbar-fixed">
+					<div class="container-fluid">
+						{{template "headbar" .}}
+					</div>
+				</nav>
+				<div class="content">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="header">
+										<h1 class="title"> Buscar Por Fecha</h1>
+									</div>
+									<div class="card-body">
+											<!-- <input type="text" name="datefilter" id="datefilter" value="" /> -->
+											<input type="date" name="dateStart" id="dateStart" value="" />
+											<input type="date" name="dateEnd" id="dateEnd" value="" />
+											<select id="location">
+												<option value="all">Todos</option>
+												<option value="cajamarca">Cajamarca</option>
+												<option value="loreto">Loreto</option>
+											</select>
+											<button id="query">Descargar Archivo--0</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="header">
+										<h1 class="title" id="table_title"> </h1>
+									</div>
+									<div class="card-body">
+										<table id="infotable" class="table">
+											
+											{{if (eq .User.Role "admin")}}
+											<thead>
+												<tr>
+													<th>Hora</th>
+													<th>Marca</th>
+													<th>Modelo</th>
+													<th>Talla</th>
+													<th>Pertenece</th>
+													<th>P. Venta</th>
+													<th>P. Costo</th>
+													<th>Ganancia</th>
+													<th>Vendedor</th>
+													<th>Lugar de Venta</th>
+													<th>Comentario</th>
+												</tr>
+											</thead>
+											<tbody id="sales_body">
+												
+											</tbody>
+											{{ end }}
+										</table>
+									</div>
+								</div>
+								{{if (eq .User.Role "admin")}}
+								<!-- <div class="row">
+									<div class="col-md-6">
+										<div class="card">
+											<table class="table">
+												<thead>
+													<th>Vendedor</th>
+													<th>Cantidad Vendida</th>
+												</thead>
+												<tbody id="sellers_body">
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="card">
+											<table class="table">
+												<thead>
+													<th>Total Vendido</th>
+													<th>Devoluciones</th>
+													<th>Ganancia</th>
+												</thead>
+												<tbody>
+													
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div> -->
+								{{end}}
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{template "footer"}}
+<script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../assets/js/myjs/sales_query.js"></script>
+</body>
+</html>
+{{ end }}

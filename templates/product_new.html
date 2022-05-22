@@ -1,0 +1,126 @@
+{{ define "product_new"}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "header"}}
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet" />
+        
+    </head>
+    <body>
+        <div class="wrapper">
+            {{ template "sidebar" .}}
+            <div class="main-panel">
+                <nav class="navbar navbar-default navbar-fixed">
+                    <div class="container-fluid">
+                        {{template "headbar" .}}
+                    </div>
+                </nav>
+                <div class="content">
+                    {{ template "message" .}}
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h1 class="title">Registrar Producto
+                                        <input class="counter" type="text" id="counter" value="{{.Counter}}" disabled>
+                                        </h1>
+                                    </div>
+                                    <div class="content">
+                                        <form action="/producto/nuevo" method="post">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Marca</label>
+                                                        <input type="text" class="form-control" placeholder="Ingrese marca del producto" minlength="3" name="brand" id="brand" style="width: 200px" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Modelo</label>
+                                                        <input type="text" class="form-control" placeholder="Ingrese modelo del producto" style="width: 200px" name="model" id="model" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>C. Fábrica</label>
+                                                        <input type="text" class="form-control" placeholder="Codigo de fabrica" name="pfc" id="pfc" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>Serie</label>
+                                                        <input type="text" class="form-control" id="serie" name="serie" placeholder="21-22" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Talla</label>
+                                                        <div id="sizes"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Costo</label>
+                                                        <input type="text" class="form-control" placeholder="Ingrese el precio del producto" name="price" id="price" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Ubicación</label>
+                                                        <div>
+                                                            <div class="locOption"> <input id="cajloc" type="radio" name="location" value="CAJAMARCA"> <label style="font-size:24px;margin-right:18px;" for="cajloc">CAJAMARCA</label> </div>
+                                                            <div class="locOption"><input id="lorloc" type="radio" name="location" value="LORETO"><label style="font-size:24px;" for="lorloc"> LORETO</label></div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Nota</label>
+                                                        <input type="text" class="form-control" id="note" name="note">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-info btn-fill pull-right">Registrar Producto</button>
+                                            <div class="clearfix"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        {{if (eq .User.Role "admin")}}
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="card">
+                                    <div class="content">
+                                        <a class="btn btn-primary btn-fill" href="/productos/ultimos" target="_blank">Últimos Productos Excel</a></li>
+                                        <a class="btn btn-primary btn-fill" href="/productos/ultimos/barcodes/s" target="_blank">Códigos para muestra </a>
+                                        <a class="btn btn-primary btn-fill" href="/productos/ultimos/barcodes/n" target="_blank">Códigos para almacen</a>
+                                        <!-- <a class="btn btn-primary btn-fill" href="/productos/ultimos/barcodes/g" target="_blank">Códigos Agrupados</a> -->
+                                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ template "footer"}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/myjs/product_new.js"></script>
+    </body>
+</html>
+{{ end }}

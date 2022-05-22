@@ -1,0 +1,47 @@
+{{ define "headbar" }}
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+    <span class="sr-only">Mostrar barra de Navegacion</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    </button>
+</div>
+<div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-left">
+        
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+        <i style="color:white" class="fas fa-align-left"></i>
+        </button>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        
+        {{ if (eq .User.Role "admin") }}
+        <li class="nav-item dropdown">
+            <a id="navbarDropdownMenuLink" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+
+                <span class="username"> {{ .User.Name }}</span> <i class="fas fa-cog"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/usuarios">Usuarios</a>
+            </div>
+        </li>
+        {{end}}
+        {{ if (eq .User.Role "usr") }}
+        <li class="nav-item">
+            <a hef="#">
+                <p> {{ .User.Name }}</p>
+            </a>
+        </li>
+        {{end}}
+        <li class="separator hidden-lg"></li>
+        
+        <li class="nav-item">
+            <a href="/salir">
+                <p>Salir</p>
+            </a>
+        </li>
+        <li class="separator hidden-lg"></li>
+    </ul>
+</div>
+{{ end }}

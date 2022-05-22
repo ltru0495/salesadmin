@@ -1,0 +1,153 @@
+{{ define "inventory"}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "header"}}
+    </head>
+    <body>
+        <div class="wrapper">
+            {{ template "sidebar" . }}
+            <div class="main-panel">
+                <nav class="navbar navbar-default navbar-fixed">
+                    <div class="container-fluid">
+                        {{template "headbar" .}}
+                    </div>
+                </nav>
+                <div class="content">
+                    {{ template "message" .}}
+                    
+                    <div class="container-fluid">
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="header">
+
+                                        <h1 class="title">Inventario 
+
+                                    {{if (eq .User.Role "admin")}}
+                                            <span style="float:right;"> 
+                                            <a class="btn btn-primary btn-fill" href="/inventario/exportar">Descargar Inventario</a></span>
+                                            {{end}}
+                                            </h1>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>CÓDIGO</th>
+                                                    <th>MARCA</th>
+                                                    <th>C. FÁBRICA</th>
+                                                    <th>TALLA</th>
+                                                    <th>MODELO</th>
+                                                    <th>PRECIO</th>
+                                                    <th>UBICACIÓN</th>
+                                                    <th>COMENTARIO</th>
+                                                    <th class="bs">VER <button id="search"></button></th>
+                                                </tr>
+                                                <tr id="filterRow">
+                                                    <th><input id="codeQuery" class="filterInput" type="text"></th>
+                                                    <th><input id="brandQuery" class="filterInput" type="text"></th>
+                                                    <th><input id="pfcQuery" class="filterInput" type="text"></th>
+                                                    <th><input id="sizeQuery" class="filterInput" type="text"></th>
+                                                    <th><input id="modelQuery" class="filterInput" type="text"></th>
+                                                    <th><input id="priceQuery" class="filterInput" type="text"></th>
+                                                    <th><input id="locationQuery" class="filterInput" type="text"></th>
+                                                    <th><input id="noteQuery" class="filterInput" type="text"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="table__content"></tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td>
+                                                        <input id="pageNum" type="text"> / 
+                                                        <input id ="pageCount" type="text" disabled>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button id="prev"> < </button>
+                                                        <button id="next"> > </button>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ver Producto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    <svg id="barcode"></svg>
+                    <br>
+                   
+                    <div class="row">
+                        <div class="col-md-4 inventory_options">
+                            <input type="radio" name="type" value="muestra" checked="" class="inventory__printOption"> 
+                            <label for="">Muestra</label>
+                        </div>
+                        <div class="col-md-4 inventory_options">
+                            <input type="radio" name="type" value="almacen" class="inventory__printOption"> 
+                            <label for="">Almacén</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button id="image" class="btn btn-primary">Imagen</button> -->
+                    <button id="pdf" class="btn btn-info btn-fill">Imprimir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar Modificación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form">
+                        <div class="form-group">
+                            <label class="col-md-4">Contraseña de Administrador</label>
+                            <input type="password" name="password" id="password">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="confirm" type="button" class="btn btn-primary">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{template "footer"}}
+    <script type="text/javascript" src="../../assets/js/JsBarcode.all.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/pablo.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/pdfkit.js"></script>
+    <script type="text/javascript" src="../../assets/js/myjs/inventory.js"></script>
+</body>
+</html>
+{{ end }}
+                                               

@@ -1,0 +1,280 @@
+{{define "sales_byloc"}}
+<div class="col-md-12">
+    <div class="card">
+        <div class="header">
+            <h1 class="title"> {{ .Title }}</h1>
+        </div>
+        <div class="card-body">
+            <table id="infotable" class="table">
+                
+                {{ $isIndex := .IsIndex }}
+
+                <thead>
+                    <tr><th class="h3">Cajamarca</th></tr>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Código</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Talla</th>
+                        <th>Pertenece</th>
+                        <th>P. Venta</th>
+                        <th>P. Costo</th>
+                        <th>Ganancia</th>
+                        <th>Vendedor</th>
+                        <th>Lugar de Venta</th>
+                        <th>Comentario</th>
+                        {{ if $isIndex }}
+                        <th>Otros</th>
+                        {{ end}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ range .SalesC }}
+                    <tr>
+                        <td>{{ .GetTimestamp }} </td>
+                        <th>{{ .Code }}</th>
+                        <td>{{ .Brand }}</td>
+                        <td>{{ .Model }}</td>
+                        <td>{{ .Size }}</td>
+                        <td>{{ .Location }}</td>
+                        <td>S/ {{ .Price }}</td>
+                        <td>S/ {{ .PriceBuy }}</td>
+                        <td>S/ {{ .Earning }}</td>
+                        <td>{{ .Seller }}</td>
+                        <td>{{ .Place }}</td>
+                        <td>{{ .Comment }}</td>
+                        {{ if $isIndex }}
+                        <td>
+                        <button id ="{{ .Id.Hex }}" data-toggle="tooltip" title="Eliminar" class="delete-button"><i class="delete-icon fas fa-minus-circle"></i></button>
+                        <a data-toggle="tooltip" title="Editar" href="/venta/{{.Id.Hex}}"><i class="edit-icon fas fa-edit"></i></a>
+                        </td>
+                        {{end}}
+                    </tr>
+                    {{ end }}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card-body">
+            <table id="infotablel" class="table">
+                
+                {{ $isIndex := .IsIndex }}
+
+                <thead>
+                    <tr><th class="h3">Loreto</th></tr>
+
+                    <tr>
+                        <th>Hora</th>
+                        <th>Código</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Talla</th>
+                        <th>Pertenece</th>
+                        <th>P. Venta</th>
+                        <th>P. Costo</th>
+                        <th>Ganancia</th>
+                        <th>Vendedor</th>
+                        <th>Lugar de Venta</th>
+                        <th>Comentario</th>
+                        {{ if $isIndex }}
+                        <th>Otros</th>
+                        {{ end}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ range .SalesL }}
+                    <tr>
+                        <td>{{ .GetTimestamp }} </td>
+                        <th>{{ .Code }}</th>
+                        <td>{{ .Brand }}</td>
+                        <td>{{ .Model }}</td>
+                        <td>{{ .Size }}</td>
+                        <td>{{ .Location }}</td>
+                        <td>S/ {{ .Price }}</td>
+                        <td>S/ {{ .PriceBuy }}</td>
+                        <td>S/ {{ .Earning }}</td>
+                        <td>{{ .Seller }}</td>
+                        <td>{{ .Place }}</td>
+                        <td>{{ .Comment }}</td>
+                        {{ if $isIndex }}
+                        <td>
+                        <button id ="{{ .Id.Hex }}" data-toggle="tooltip" title="Eliminar" class="delete-button"><i class="delete-icon fas fa-minus-circle"></i></button>
+                        <a data-toggle="tooltip" title="Editar" href="/venta/{{.Id.Hex}}"><i class="edit-icon fas fa-edit"></i></a>
+                        </td>
+                        {{end}}
+                    </tr>
+                    {{ end }}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+    
+    <div class="card">
+        <div class="header">
+            <h1 class="title h2"> Cambios y Devoluciones</h1>
+        </div>
+        {{ $isIndex := .IsIndex }}
+
+        <div class="card-body">
+            <table id="infotable" class="table">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+			<th>Código</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Talla</th>
+                        <th>Pertenece</th>
+                        <th>Precio de Venta</th>
+                        <th>Vendedor</th>
+                        <th>Comentario</th>
+                        {{ if $isIndex }}
+                        <th>Otros</th>
+                        {{ end}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ range .Refunds }}
+                    <tr>
+                        <td>{{ .GetTimestamp }}</td>
+			<td>{{ .Code }}</td>
+                        <td>{{ .Brand }}</td>
+                        <td>{{ .Model }}</td>
+                        <td>{{ .Size }}</td>
+                        <td>{{ .Location }}</td>
+                        <td>S/ {{ .Price }}</td>
+                        <td>{{ .Seller }}</td>
+                        <td>{{ .Comment }}</td>
+                        {{ if $isIndex }}
+                        <td>
+                        <button id ="{{ .Id.Hex }}" data-toggle="tooltip" title="Eliminar" class="delete-button"><i class="delete-icon fas fa-minus-circle"></i></button>
+                        </td>
+                        {{end}}
+                        
+                    </tr>
+                    {{ end }}
+                </tbody>
+                
+            </table>
+        </div>
+        
+    </div>
+
+    {{if (eq .User.Role "admin")}}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>TOTAL VENTAS</th>
+                            <th>PAGO ELECTRÓNICO</th>
+                            <th>TOTAL EN DEVOLUCIONES</th>
+                            <th>TOTAL EFECTIVO</th>
+                            <th>UTILILDAD</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>CAJAMARCA</strong></td>
+                            <td>{{.TotalSalesC}}</td>
+                            <td>{{ .TotalPEC }}</td>
+                            <td>{{ .TotalRefundsC }}</td>
+                            <td>{{ .TotalEC }}</td>
+                            <td>{{ .UtilidadC }}</td>
+                            
+                        </tr>
+                        <tr>
+                            <td><strong>LORETO</strong></td>
+                            <td>{{.TotalSalesL}}</td>
+                            <td>{{ .TotalPEL }}</td>
+                            <td>{{ .TotalRefundsL }}</td>
+                            <td>{{ .TotalEL }}</td>
+                            <td>{{ .UtilidadL }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {{end}}
+    {{if (eq .User.Role "admin")}}
+    <div class="row">
+        <!-- <div class="col-md-6"></div> -->
+        <!-- <div class="col-md-6">
+            <div class="card">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Total Devoluciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>CAJAMARCA</b></td>
+                            <td>{{.TotalRefundsC}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>LORETO</b></td>
+                            <td>{{.TotalRefundsL}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <table class="table">
+                        <thead>
+                            <th>Vendedor</th>
+                            <th>Cantidad Vendida</th>
+                        </thead>
+                        <tbody>
+                            {{range .Sellers}}
+                            <tr>
+                                <td>{{.Name}}</td>
+                                <td>{{.Amount}}</td>
+                            </tr>
+                            {{end}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- <div class="col-md-6">
+                <div class="card">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Total </th>
+                                <th>Total Ganancia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>CAJAMARCA</b></td>
+                                <td>{{.TotalSalesAndRefundsC}}</td>
+                                <td>{{.TotalEarningC}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>LORETO</b></td>
+                                <td>{{.TotalSalesAndRefundsL}}</td>
+                                <td>{{.TotalEarningL}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> -->
+        </div>
+        {{end}}
+    </div>
+   
+{{end}}

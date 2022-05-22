@@ -1,0 +1,128 @@
+{{ define "sidebar" }}
+<div class="sidebar" data-color="color1">
+    <!--
+    Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+    Tip 2: you can also add an image using data-image tag
+    -->
+    <div class="sidebar-wrapper">
+        <div class="logo">
+            <a href="/" class="simple-text">
+                <img src="../../assets/img/m1.png">
+            </a>
+        </div>
+        <ul class="nav">
+            {{ if (eq .User.Role "admin") }}
+            <li class="nav-item ">
+                <a href="/"  class="dropdown-toggle">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Ventas <span class="fas fa-caret-down"></span></p>
+                </a>
+                <ul class="list-unstyled">
+                    <li class="level-2">
+                        <a class="nav-item" href="/ventas">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p>Ventas por fecha</p>
+                        </a>
+                    </li>
+                   <li class="level-2">
+                        <a class="nav-item" href="/ventas/buscar">
+                            <i class="fas fa-search"></i>
+                            <p>Buscar Ventas</p>
+                        </a>
+                    </li>
+                      <li class="level-2">
+                        <a class="nav-item" href="/ventas/devolver">
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            <p>Cambios y Devoluciones</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="nav-item">
+                <a href="/inventario" class="dropdown-toggle" >
+                    <i class="fas fa-shoe-prints"></i>
+                    <p>Inventario <span class="fas fa-caret-down"></span></p>
+                </a>
+                <ul class="list-unstyled">
+                    <li class="level-2">
+                        <a class="nav-item" href="/producto/nuevo">
+                            <i class="far fa-plus-square"></i>
+                            <p>Agregar Nuevo</p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li class="level-2">
+                        <a class="nav-item" href="/productos/reporte">
+                            <i class="fas fa-tablet"></i>
+                            <p>Control de Inventario</p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li class="level-2">
+                        <a class="nav-item" href="/productos/imprimir">
+                            <i class="fas fa-print"></i>
+                            <p>Etiquetas</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="/graficos" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-chart-bar"></i>
+                    <p>Gráficos</p>
+                </a>
+            </li>
+            
+            {{end}}
+            {{ if (eq .User.Role "usr") }}
+            <li class="nav-item ">
+                <a href="/"  class="dropdown-toggle">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Ventas <span class="fas fa-caret-down"></span></p>
+                </a>
+                <ul class="list-unstyled">
+                    <!-- <li class="level-2">
+                        <a class="nav-item" href="/venta/nueva">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p>Registrar Venta</p>
+                        </a>
+                    </li> -->
+                    <li class="level-2">
+                        <a class="nav-item" href="/ventas">
+                            <i class="fas fa-cart-plus"></i>
+                            <p>Ventas por fecha</p>
+                        </a>
+                    </li>
+                    <li class="level-2">
+                        <a class="nav-item" href="/ventas/devolver">
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            <p>Cambios y Devoluciones</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/inventario" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-th"></i>
+                    <p>Inventario</p>
+                </a>
+                <ul class="list-unstyled">
+                    <li class="level-2">
+                        <a class="nav-item" href="/productos/imprimir">
+                            <i class="fas fa-print"></i>
+                            <p>Etiquetas</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            {{end}}
+            
+            
+            
+        </ul>
+    </div>
+</div>
+{{ end }}

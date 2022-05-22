@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"salesadmin.models"},{"v":2,"unique":true,"key":{"name":1},"name":"name_1","ns":"salesadmin.models","background":true,"sparse":true}],"uuid":"1509f51872524d2c9e5d253b10330f38"}

@@ -1,0 +1,94 @@
+{{ define "users"}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "header"}}
+    </head>
+    <body>
+        <div class="wrapper">
+            {{ template "sidebar" . }}
+            <div class="main-panel">
+                <nav class="navbar navbar-default navbar-fixed">
+                    <div class="container-fluid">
+                        {{template "headbar" .}}
+                    </div>
+                </nav>
+                <div class="content">
+                    {{ template "message" .}}
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h1 class="title">Usuarios</h1>
+                                    </div>
+                                    <div class="card-body content">
+                                        <table id="infotable" class="table table-hover">
+                                            <thead>
+                                                <th>Usuario</th>
+                                                <th>Nombre</th>
+                                                <th>Cambiar contraseña</th>
+                                            </thead>
+                                            <tbody>
+                                                {{ range .Users}}
+                                                <tr>
+                                                    <td> {{ .Username}}</td>
+                                                    <td> {{.Name }}</td>
+                                                    <td><button id="{{.Username}}" class=" btn btn-dark btn-sm  changepass-btn">Cambiar Contraseña</button></td>
+                                                </tr>
+                                                {{end}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="pModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ver Producto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form">
+                            <div class="form-group">
+                                <label class="col-md-4">Usuario</label>
+                                <input type="text" name="user" id="user" readonly="">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">Contraseña Actual</label>
+                                <input type="password" name="password" id="password">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">Contraseña Nueva</label>
+                                <input type="password" name="newpassword" id="newpassword">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">Confirmar Contraseña</label>
+                                <input type="password" name="confirmpassword" id="confirmpassword">
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="savepass" type="button" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{template "footer"}}
+        <script type="text/javascript" src="../../assets/js/JsBarcode.all.min.js"></script>
+        <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/pablo.min.js"></script>
+        <script type="text/javascript" src="../../assets/js/myjs/users.js"></script>
+    </body>
+</html>
+{{ end }}

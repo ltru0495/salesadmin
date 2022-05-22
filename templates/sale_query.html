@@ -1,0 +1,51 @@
+{{ define "sales_query"}}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{{ template "header"}}
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			{{ template "sidebar" .}}
+			<div class="main-panel">
+				<nav class="navbar navbar-default navbar-fixed">
+					<div class="container-fluid">
+						{{template "headbar" .}}
+					</div>
+				</nav>
+				<div class="content">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card" style="padding:20px;">
+									<div class="header">
+										<h2 class="title"> Buscar Por Fecha</h2>
+									</div>
+									<div class="card-body">
+										<div class="container-fluid">
+											<input type="date" name="dateStart" id="dateStart" value="" />
+											<input type="date" name="dateEnd" id="dateEnd" value="" />
+											<select id="location">
+												<option value="all">Todos</option>
+												<option value="cajamarca">Cajamarca</option>
+												<option value="loreto">Loreto</option>
+											</select>
+											<button id="query">Descargar Archivo</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{template "footer"}}
+<script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../assets/js/myjs/sales_query.js"></script>
+</body>
+</html>
+{{ end }}

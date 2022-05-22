@@ -1,0 +1,220 @@
+{{ define "sale_new"}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "header"}}
+    </head>
+    <body>
+        <div class="wrapper">
+            {{ template "sidebar" .}}
+            <div class="main-panel">
+                <nav class="navbar navbar-default navbar-fixed">
+                    <div class="container-fluid">
+                        {{template "headbar" .}}
+                        
+                    </div>
+                </nav>
+                <div class="content">
+                    {{ template "message" . }}
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h1 class="title">Registrar Venta</h1>
+                                    </div>
+                                    <div class="content">
+                                        <form id="saleform">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Codigo de producto</label>
+                                                        <input type="text" class="form-control" name="code" id="code"  autocomplete="off" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label></label>
+                                                    <div class="form-group">
+                                                        <button class="btn btn-dark btn-fill" id="productButton">OK</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Marca</label>
+                                                        <input type="text" class="form-control" placeholder="Marca del producto" minlength="3" name="brand" id="brand" readonly required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Series</label>
+                                                        <input type="text" class="form-control" id="serie" name="serie" placeholder="Serie" readonly required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Tienda</label>
+                                                        <input type="text" class="form-control" name="place" placeholder="Vendedor" id="place" value="{{.User.Name}}" readonly required>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Talla</label>
+                                                        <input type="text" class="form-control" placeholder="Talla del producto" name="size" id="size" readonly required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Modelo</label>
+                                                        <input type="text" class="form-control" placeholder="Modelo del producto" name="model" id="model" readonly required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Ubicacion</label>
+                                                        <input type="text" class="form-control" placeholder="Ubicacion de producto" name="location" id="location" readonly required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Vendedor</label>
+                                                        <input type="text"  class="form-control" name="seller" placeholder="Vendedor" id="seller" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Precio de Venta</label>
+                                                        <input type="text" class="form-control" name="price" id="price" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Método de Pago</label>
+                                                        <br>
+                                                        <select class="form-control" name="payment_method" id="payment_method" required>
+                                                            <option value="efectivo">EFECTIVO</option>
+                                                            <option value="electronico">PAGO ELECTRONICO</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Comentario</label>
+                                                        <input type="text" class="form-control" name="comment" id="comment">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-info btn-fill pull-right">Registrar Venta</button>
+                                            <div class="clearfix"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                          {{if (eq .User.Role "admin")}}
+                            {{ template "sales_table" . }}
+                        
+                        {{end}}
+                        
+                        {{if (eq .User.Role "usr")}}
+                            {{ template "sales_table_user" . }}
+                        {{end}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirmación de Venta</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table modal-table">
+                            <tbody>
+                                <tr>
+                                    <td class="modal-name">Código</td>
+                                    <td id="modal-code"></td>
+                                </tr>
+                                <tr>
+                                    <td class="modal-name">Marca</td>
+                                    <td id="modal-brand"></td>
+                                </tr>
+                                <tr>
+                                    <td class="modal-name">Serie</td>
+                                    <td id="modal-serie"></td>
+                                </tr>
+                                <tr>
+                                    <td class="modal-name">Modelo</td>
+                                    <td id="modal-model"></td>
+                                </tr>
+                                <tr>
+                                    <td class="modal-name">Talla</td>
+                                    <td id="modal-size"></td>
+                                </tr>
+                                <tr>
+                                    <td class="modal-name">Ubicación</td>
+                                    <td id="modal-location"></td>
+                                </tr>
+                                <tr>
+                                    <td class="modal-name">Vendedor</td>
+                                    <td id="modal-seller"></td>
+                                </tr>
+                                <tr>
+                                    <td class="modal-name">Precio de Venta</td>
+                                    <td id="modal-price"></td>
+                                </tr>
+                                <tr>
+                                    <td class="modal-name">Metodo de Pago</td>
+                                    <td id="modal-payment_method"></td>
+                                </tr>
+                                <tr>
+                                    <td class="modal-name">Tienda</td>
+                                    <td id="modal-place"></td>
+                                </tr>
+                                <tr>
+                                    <td class="modal-name">Comentario</td>
+                                    <td id="modal-comment"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button style="float:left;" id="cancel" type="button" class="btn btn-danger btn-fill" data-dismiss="modal">Cancelar</button>
+                        <button id="save" type="button" class="btn btn-info btn-fill">Confirmar Venta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                
+            </div>
+        </div>
+        
+    </div>
+    {{ template "footer"}}
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/myjs/sale_new.js"></script>
+</body>
+</html>
+{{ end }}
