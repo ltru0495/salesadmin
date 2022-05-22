@@ -7,7 +7,6 @@ import (
 	"net/http"
 
 	"admin/models"
-	"admin/models/database"
 )
 
 func main() {
@@ -24,18 +23,18 @@ func main() {
 	user.Name = "CAJAMARCA"
 	user.Password = "123456"
 	user.Role = "user"
-	database.InsertUser(&user)
+	// database.InsertUser(&user)
 
 	user.Username = "loreto"
 	user.Name = "LORETO"
 	user.Password = "123456"
 	user.Role = "user"
-	database.InsertUser(&user)
+	// database.InsertUser(&user)
 
 	var counter models.Counter
 	counter.Code = "MyCounter"
 	counter.Counter = 0
-	database.InsertCounter(&counter)
+	// database.InsertCounter(&counter)
 
 	port := config.ServerPort()
 	router := routers.InitRoutes()
@@ -48,3 +47,5 @@ func main() {
 	log.Fatal(server.ListenAndServe())
 
 }
+
+// git push  https://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@github.com/ltru0495/salesadmin.git
