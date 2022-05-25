@@ -1,6 +1,18 @@
 $(function() {
-    var seller, comment, price;
+    var seller, comment, price, pm="";
 
+    $(".selected").css("background-color", "#3ebf4c")
+	$("#efectivo").on("click", () => {
+		pm = "efectivo"
+		document.getElementById("efectivo").style.background ="#3ebf4c"
+		document.getElementById("electronico").style.background ="#ecf0f5"
+		
+	})
+	$("#electronico").on("click", () => {
+		pm = "electronico"
+		document.getElementById("electronico").style.background ="#3ebf4c"
+		document.getElementById("efectivo").style.background ="#ecf0f5"
+	})
 
     function setVariables() {
         seller = $('#seller').val();
@@ -14,13 +26,17 @@ $(function() {
 
 
     $("form").submit(function(event) {
+        event.preventDefault();
         setVariables();
+
+        if (pm === ""){
+			alert("Metodo de pago no seleccionado")
+			return;
+		}
         if ( seller == "" || price == "" || isNaN(price)){
             alert("Ha ocurrido un error");
-            event.preventDefault();
             return
         }
-        event.preventDefault();
         $('#confirmModal').modal("show");
     });
 
@@ -34,10 +50,15 @@ $(function() {
             alert("Debe ingresar la contraseña");
             return;
         }
+        if (pm === ""){
+			alert("Metodo de pago no seleccionado")
+			return;
+		}
         var data = {
             password: password,
             price: Number(price),
             seller: seller,
+            payment_method: pm,
             comment: comment,
         };
 

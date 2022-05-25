@@ -248,3 +248,21 @@ tfoot  {
 	cursor: pointer;
 }
 
+.last-cell {
+	width: 100px;
+}
+
+.pmOption {
+	margin: 10px;
+	padding: 10px;
+}
+
+
+.pmOption:hover {
+	cursor: pointer;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.selected {
+}

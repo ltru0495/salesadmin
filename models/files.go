@@ -294,11 +294,13 @@ func GetReportFile(total float64, totalSales float64,
 
 	cStyle := contentStyle(flag)
 	cell.SetStyle(cStyle)
-	cell.Value = "S/ " + fmt.Sprintf("%.2f", totalSales)
+	cell.SetFloatWithFormat(totalSales, "###0.00")
+	// cell.Value = "S/ " + fmt.Sprintf("%.2f", totalSales)
 
 	cell = row.AddCell()
 	cell.SetStyle(cStyle)
-	cell.Value = "S/ " + fmt.Sprintf("%.2f", total)
+	cell.SetFloatWithFormat(total, "###0.00")
+	// cell.Value = "S/ " + fmt.Sprintf("%.2f", total)
 
 	row = sheet.AddRow() //Empty Row
 
@@ -381,15 +383,18 @@ func GetReportFile(total float64, totalSales float64,
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
-		cell.Value = "S/ " + fmt.Sprintf("%.2f", sale.Price)
+		cell.SetFloatWithFormat(sale.Price, "###0.00")
+		// cell.Value = "S/ " + fmt.Sprintf("%.2f", sale.Price)
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
-		cell.Value = "S/ " + fmt.Sprintf("%.2f", sale.PriceBuy)
+		cell.SetFloatWithFormat(sale.PriceBuy, "###0.00")
+		// cell.Value = "S/ " + fmt.Sprintf("%.2f", sale.PriceBuy)
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
-		cell.Value = "S/ " + fmt.Sprintf("%.2f", sale.Earning)
+		cell.SetFloatWithFormat(sale.Earning, "###0.00")
+		// cell.Value = "S/ " + fmt.Sprintf("%.2f", sale.Earning)
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
@@ -506,7 +511,8 @@ func GetReportFileForUser(sellers []Seller, sales []Sale, date string, place str
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
-		cell.Value = "S/ " + fmt.Sprintf("%.2f", sale.Price)
+		cell.SetFloatWithFormat(sale.Price, "###0.00")
+		// cell.Value = "S/ " + fmt.Sprintf("%.2f", sale.Price)
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
@@ -624,7 +630,9 @@ func GetInventoryFile(products []Product) *xlsx.File {
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
-		cell.Value = fmt.Sprintf("%.2f", product.Price)
+		cell.SetFloatWithFormat(product.Price, "###0.00")
+		// cell.Value = fmt.Sprintf("%.2f", product.Price)
+
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()

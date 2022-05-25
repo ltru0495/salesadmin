@@ -90,6 +90,27 @@
                                                         <input type="text" class="form-control" name="price" id="price" value="{{.Sale.Price}}" required>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <p>
+                                                            <label for="">
+                                                                MÉTODO DE PAGO
+                                                            </label>
+                                                        </p class=>
+                                                        {{if (eq .Sale.Payment_Method  "efectivo" )}}
+                                                        <span class="pmOption selected" id="efectivo">EFECTIVO</span>
+                                                        <span class="pmOption" id="electronico">PAGO ELECTRONICO</span>
+                                                        {{end}}
+                                                        {{if (eq .Sale.Payment_Method  "electronico" )}}
+                                                        <span class="pmOption" id="efectivo">EFECTIVO</span>
+                                                        <span class="pmOption selected" id="electronico">PAGO ELECTRONICO</span>
+                                                        {{end}}
+                                                        {{if (eq .Sale.Payment_Method  "" )}}
+                                                        <span class="pmOption" id="efectivo">EFECTIVO</span>
+                                                        <span class="pmOption" id="electronico">PAGO ELECTRONICO</span>
+                                                        {{end}}
+                                                    </div>
+                                                </div>
                                                 
                                             </div>
                                             <div class="row">

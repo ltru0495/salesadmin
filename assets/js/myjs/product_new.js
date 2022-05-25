@@ -59,11 +59,9 @@ $(function() {
     $('input[type="radio"]').click(function(){
         $(".locOption").css("background-color", "#ecf0f5")
         $(".locOption").css("border", "none")
-        if ($(this).is(':checked'))
-        {
-        $('input[type="radio"]input[value="'+$(this).val()+'"]').parent().css("background-color", "#3ebf4c")
-        $('input[type="radio"]input[value="'+$(this).val()+'"]').parent().css("border", "solid")
-        
+        if ($(this).is(':checked')) {
+            $('input[type="radio"]input[value="'+$(this).val()+'"]').parent().css("background-color", "#3ebf4c")
+            $('input[type="radio"]input[value="'+$(this).val()+'"]').parent().css("border", "solid")
         }
       });
       

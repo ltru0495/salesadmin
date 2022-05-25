@@ -2,6 +2,7 @@ package main
 
 import (
 	"admin/config"
+	"admin/models/database"
 	"admin/routers"
 	"log"
 	"net/http"
@@ -17,7 +18,7 @@ func main() {
 	user.Name = "administrador"
 	user.Role = "admin"
 
-	// database.InsertUser(&user)
+	database.InsertUser(&user)
 
 	user.Username = "cajamarca"
 	user.Name = "CAJAMARCA"

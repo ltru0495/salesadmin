@@ -21,6 +21,15 @@ import (
 	"admin/utils"
 )
 
+func cleanSales(sales []models.Sale) []models.Sale {
+	var result []models.Sale
+	for _, sale := range sales {
+		if sale.Price > 0 {
+			result = append(result, sale)
+		}
+	}
+	return result
+}
 func GetSalesFile(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	date := params["date"]
@@ -33,6 +42,7 @@ func GetSalesFile(w http.ResponseWriter, r *http.Request) {
 	}
 
 	sales, err := database.GetSalesByDate(t)
+	sales = cleanSales(sales)
 	total, totalSales, sellers := models.GetTotalSales(sales)
 
 	filename := "ventas_" + date + ".xlsx"
@@ -81,6 +91,8 @@ func GetSalesPDFFile(w http.ResponseWriter, r *http.Request) {
 	}
 
 	sales, err := database.GetSalesByDate(t)
+	sales = cleanSales(sales)
+
 	total, totalSales, sellers := models.GetTotalSales(sales)
 
 	filename := "./public/ventas_" + date + ".pdf"
@@ -132,6 +144,8 @@ func GetSalesFileByLocation(w http.ResponseWriter, r *http.Request) {
 	place := strings.ToUpper(params["place"])
 
 	sales, err := database.GetSalesByDateAndLocation(t, place)
+	sales = cleanSales(sales)
+
 	total, totalSales, sellers := models.GetTotalSales(sales)
 
 	filename := "ventas_" + date + ".xlsx"
@@ -181,6 +195,8 @@ func GetSalesPDFFileByLocation(w http.ResponseWriter, r *http.Request) {
 	place := strings.ToUpper(params["place"])
 
 	sales, err := database.GetSalesByDateAndLocation(t, place)
+	sales = cleanSales(sales)
+
 	total, totalSales, sellers := models.GetTotalSales(sales)
 
 	filename := "ventas_" + date + ".pdf"
@@ -236,6 +252,8 @@ func GetSalesFileForUser(w http.ResponseWriter, r *http.Request) {
 	sellers := models.GetSellers(sales)
 
 	filename := "ventas_" + date + ".xlsx"
+	sales = cleanSales(sales)
+
 	file := models.GetReportFileForUser(sellers, sales, date, place)
 
 	err = file.Save(filename)

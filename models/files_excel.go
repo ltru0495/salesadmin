@@ -3,6 +3,7 @@ package models
 import (
 	"fmt"
 	"log"
+	"strconv"
 
 	"github.com/tealeg/xlsx"
 )
@@ -94,12 +95,10 @@ func SaleFile(sales []Sale) *xlsx.File {
 	// HEADER ROW
 	row = sheet.AddRow()
 	row.SetHeight(32.0)
-	for i, v := range headers {
+	for _, v := range headers {
 		hStyle := headersStyle()
 		cell = row.AddCell()
-		if i == 1 || i == 2 || i == 3 || i == 13 {
-			highlight(hStyle)
-		}
+
 		cell.SetStyle(hStyle)
 		cell.Value = v
 	}
@@ -118,14 +117,19 @@ func SaleFile(sales []Sale) *xlsx.File {
 		cell.Value = fmt.Sprintf("%d", (k + 1))
 		cell.SetStyle(cStyle)
 
-		for i, val := range fields {
+		for _, field := range fields {
 			cStyle := contentStyle(flag)
-			if i <= 2 || i == 12 {
-				highlight(cStyle)
-			}
 			cell = row.AddCell()
 			cell.SetStyle(cStyle)
-			cell.Value = p[val]
+			if field == "price" || field == "pricebuy" {
+				floatV, err := strconv.ParseFloat(p[field], 64)
+				if err != nil {
+					log.Println(err)
+				}
+				cell.SetFloatWithFormat(floatV, "###.00")
+			} else {
+				cell.Value = p[field]
+			}
 		}
 
 		flag = !flag

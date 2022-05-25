@@ -25,6 +25,7 @@ type Sale struct {
 	Seller    string    `json:"seller" bson:"seller"`
 	Place     string    `json:"place" bson:"place"` //Lugar de venta
 	Price     float64   `json:"price" bson:"price"`
+	
 	Comment   string    `json:"comment" bson:"comment"`
 	Timestamp time.Time `json:"timestamp" bson:"timestamp"`
 	RegDate   time.Time `json:"regdate" bson:"regdate"`
@@ -38,9 +39,10 @@ func (s *Sale) ToMap() map[string]string {
 	m := make(map[string]string)
 	j, _ := json.Marshal(s)
 	json.Unmarshal(j, &m)
-	m["pricebuy"] = fmt.Sprintf("S/ %.02f", s.Price)
-	m["price"] = fmt.Sprintf("S/ %.02f", s.Price)
+	m["pricebuy"] = fmt.Sprintf("%.02f", s.PriceBuy)
+	m["price"] = fmt.Sprintf("%.02f", s.Price)
 	m["size"] = fmt.Sprintf("%d", s.Size)
+
 	m["regdate"] = spanishDate(s.RegDate.Format("02-Jan-2006"))
 	if m["regdate"] == "01-Ene-0001" {
 		m["regdate"] = ""

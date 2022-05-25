@@ -29,7 +29,6 @@ function createDeleteBtn(code) {
 }
 
 function createRow(p) {
-    console.log(p.code);
     const tr = document.createElement("tr")
     tr.innerHTML = `
     <td class="table__cell">${p.code}</td>
@@ -43,6 +42,7 @@ function createRow(p) {
     `
 
     const td = document.createElement('td')
+    td.className = "last-cell"
     td.appendChild(createShowBtn(p.code))
     td.appendChild(createDeleteBtn(p.code))
     tr.appendChild(td)
@@ -67,7 +67,7 @@ function getURLParams(){
     filters.forEach(filter => {  
         const f = document.getElementById(`${filter}Query`)
 
-        rxs[filter] = f.value 
+        rxs[filter] = f.value.toUpperCase()
     })
 }
 function fetchData(page) {
@@ -144,11 +144,11 @@ next.addEventListener('click', (e)=>{
 
 filters.forEach(filter => {
     rxs[filter] = ""
-    document.getElementById(`${filter}Query`).addEventListener('keypress', (event) => {
-        if (event.key === "Enter") {
-            currentPage = 1
-            fetchData(currentPage)
-        }
+    document.getElementById(`${filter}Query`).addEventListener('input', (event) => {
+        // if (event.key === "Enter") {
+        currentPage = 1
+        fetchData(currentPage)
+        // }
     })
 })
 

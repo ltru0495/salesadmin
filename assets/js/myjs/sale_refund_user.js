@@ -10,11 +10,10 @@ $(function() {
         if (code === "") {
             alert("Codigo no especificado")
         } else {
-            console.log('/api/producto/'+code)
             $(':input', '#saleform').not(':button, :submit, :reset, :hidden, #place').val('')
-
             $.getJSON(url_server + '/api/venta/' + code, function(sale) {
-                console.log(sale)
+    			console.log(sale);
+
                 id = sale._id;
                 $('#code').val(sale.code);
                 $('#brand').val(sale.brand);
@@ -26,14 +25,19 @@ $(function() {
                 $('#price').val(sale.price);
                 $('#seller').val(sale.seller);
                 $('#comment').val(sale.comment);
+                let rg =sale.regdate.split("T")[0] 
+// 000009MA21002
+                console.log(rg);
+                if ( rg != "" && rg != "01-01-0001"){
+                    document.getElementById("date").value = rg
+
+                }
             }).fail(function() {
                 alert("VENTA NO ENCONTRADA");
             });
 
         }
     });
-
-
 
     function getField(fieldName) {
         return ($('#' + fieldName).val());
@@ -64,7 +68,6 @@ $(function() {
             alert("Venta no especificada")
             return;
         }
-        console.log("ASSSSSSSSSSSSSS");
         if (confirm("¿Seguro que desea realizar una devolución de dinero?")) {
             $.ajax({
                 type: "POST",

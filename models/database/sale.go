@@ -320,6 +320,7 @@ func UpdateSaleById(id string, sale *models.Sale) error {
 	saleToUpdate.Earning = saleToUpdate.Price - saleToUpdate.PriceBuy
 	saleToUpdate.Seller = sale.Seller
 	saleToUpdate.Comment = sale.Comment
+	saleToUpdate.Payment_Method = sale.Payment_Method
 	err = C.Update(bson.M{ID: bson.ObjectIdHex(id)}, saleToUpdate)
 	if err != nil {
 		return err

@@ -84,8 +84,8 @@ func GetSalesFile(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 		return
 	}
-	
-	filename := "REPORTE DE VENTAS.xlsx"
+
+	filename := "REPORTE DE VENTAS_" + params["start"] + "_" + params["end"] + ".xlsx"
 	file := models.SaleFile(sales)
 
 	err = file.Save(filename)

@@ -344,6 +344,7 @@ func ViewSale(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	context := utils.GetFullContext(r)
+	log.Println(sale.Payment_Method)
 	context["Sale"] = sale
 
 	utils.RenderTemplate(w, "sale_view", context)

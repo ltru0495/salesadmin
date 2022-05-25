@@ -35,7 +35,6 @@ $(function () {
         "iDisplayLength": 10000
     });
     $('.paginate_button').css('display', 'none')
-
     $("form")[0].reset();
 
 	$('#productButton').on( 'click' , (event) => {
@@ -56,6 +55,8 @@ $(function () {
 				$('#size').val(product.size);
 				$('#model').val(product.model);
 				$('#location').val(product.location);
+				$('#date').val(sale.regdate);
+
 				// console.log(product);
 			}).fail(function() {
 				alert( "PRODUCTO NO ENCONTRADO" );
@@ -63,6 +64,23 @@ $(function () {
 
 		}
 	});
+	// 000001MA22004
+	// 000002MA21002
+	// 000001MA22005
+
+	let pm =""
+
+	$("#efectivo").on("click", () => {
+		pm = "efectivo"
+		document.getElementById("efectivo").style.background ="#3ebf4c"
+		document.getElementById("electronico").style.background ="#ecf0f5"
+		
+	})
+	$("#electronico").on("click", () => {
+		pm = "electronico"
+		document.getElementById("electronico").style.background ="#3ebf4c"
+		document.getElementById("efectivo").style.background ="#ecf0f5"
+	})
 
 	$('#seller').on('input', function (){
 		$('#seller').val($('#seller').val().toUpperCase());
@@ -71,11 +89,10 @@ $(function () {
 	function getField(fieldName) {
 		return($('#'+fieldName).val());
 	}
-	// 000008MA21001
 
 	function setModalField(fieldName){
 		$('#modal-'+fieldName).text(getField(fieldName));
-		if(fieldName === "payment_method")  $('#modal-'+fieldName).text($('#'+fieldName+" option:selected").text());
+		if(fieldName === "payment_method")  $('#modal-'+fieldName).text(pm);
 		
 		if(fieldName === "price") $('#modal-'+fieldName).text("S/ "+getField(fieldName));
 	}
@@ -89,7 +106,7 @@ $(function () {
 			place: getField('place'),
 			location: getField('location'),
 			comment: getField('comment'),
-			payment_method: getField('payment_method'),
+			payment_method: pm,
 		}
 		return sale;
 	}
@@ -100,7 +117,11 @@ $(function () {
 	 	if(sale.code === "") {
 	 		alert("Producto no especificado")
 	 		return;
-	 	}
+		}
+		if (pm === ""){
+			alert("Metodo de pago no seleccionado")
+			return;
+		}
 
 	 	$.ajax({
 		  type: "POST",
@@ -117,6 +138,9 @@ $(function () {
 
 
 	$("form").submit(function( event ) {
+		
+		event.preventDefault();
+
 		setModalField('code');
 		setModalField('brand');
 		setModalField('serie');
@@ -128,6 +152,11 @@ $(function () {
 		setModalField('payment_method');
 		setModalField('place');
 		setModalField('comment');
+
+		if (pm === ""){
+			alert("Metodo de pago no seleccionado")
+			return;
+		}
 		
 		if(isNaN(Number($("#price").val()))) {
 	 	    event.preventDefault();
@@ -135,7 +164,6 @@ $(function () {
  		    return
 		}
 	    $('#confirmationModal').modal('show');
- 	    event.preventDefault();
 	    return;
 	});
 });
