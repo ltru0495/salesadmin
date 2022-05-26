@@ -25,7 +25,7 @@ $(function() {
                 $('#price').val(sale.price);
                 $('#seller').val(sale.seller);
                 $('#comment').val(sale.comment);
-                let rg =sale.regdate.split("T")[0] 
+                let rg =sale.timestamp.split("T")[0] 
 // 000009MA21002
                 console.log(rg);
                 if ( rg != "" && rg != "01-01-0001"){

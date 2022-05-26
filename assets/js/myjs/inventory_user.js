@@ -100,17 +100,15 @@ next.addEventListener('click', (e)=>{
     fetchData(page)
 })
 
-
 filters.forEach(filter => {
     rxs[filter] = ""
-    document.getElementById(`${filter}Query`).addEventListener('keypress', (event) => {
-        if (event.key === "Enter") {
-            currentPage = 1
-            fetchData(currentPage)
-        }
+    document.getElementById(`${filter}Query`).addEventListener('input', (event) => {
+        // if (event.key === "Enter") {
+        currentPage = 1
+        fetchData(currentPage)
+        // }
     })
 })
-
 document.getElementById("search").addEventListener('click', ()=>{
     const filters = document.getElementById('filterRow')
     filters.classList.toggle('hidden')
