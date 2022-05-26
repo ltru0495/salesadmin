@@ -43,12 +43,12 @@ func (s *Sale) ToMap() map[string]string {
 	m["price"] = fmt.Sprintf("%.02f", s.Price)
 	m["size"] = fmt.Sprintf("%d", s.Size)
 
-	m["regdate"] = spanishDate(s.RegDate.Format("02-Jan-2006"))
-	if m["regdate"] == "01-Ene-0001" {
+	m["regdate"] = spanishDate(s.RegDate.Format("02/Jan/2006"))
+	if m["regdate"] == "01/Ene/0001" {
 		m["regdate"] = ""
 	}
-	m["timestamp"] = spanishDate(s.Timestamp.Format("02-Jan-2006"))
-	if m["timestamp"] == "01-Ene-0001" {
+	m["timestamp"] = spanishDate(s.Timestamp.Format("02/Jan/2006"))
+	if m["timestamp"] == "01/Ene/0001" {
 		m["timestamp"] = ""
 	}
 	m["time"] = spanishDate(s.Timestamp.Format("15:04:05"))

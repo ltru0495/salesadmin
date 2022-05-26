@@ -11,9 +11,9 @@ import (
 	"strings"
 )
 
-var salesTableHeaders = [...]string{"MARCA", "TALLA", "MODELO", "PERTENECE", "VENDEDOR",
+var salesTableHeaders = [...]string{"FECHA DE VENTA", "MARCA", "TALLA", "MODELO", "PERTENECE", "VENDEDOR",
 	"LUGAR DE VENTA", "PRECIO DE VENTA", "PRECIO DE COMPRA", "GANANCIA", "COMENTARIO"}
-var salesTableUserHeaders = [...]string{"MARCA", "TALLA", "MODELO",
+var salesTableUserHeaders = [...]string{"FECHA DE VENTA", "MARCA", "TALLA", "MODELO",
 	"PERTENECE", "VENDEDOR", "PRECIO DE VENTA", "COMENTARIO"}
 var sellersTableHeaders = [...]string{"NOMBRE DE VENDEDOR", "CANTIDAD VENDIDA"}
 var totalTableHeaders = [...]string{"TOTAL VENDIDO", "GANANCIA"}
@@ -192,6 +192,13 @@ func LargePage(pdf *gofpdf.Fpdf, product Product) {
 
 }
 
+func spanishD(date string) string {
+	date = strings.Replace(date, "Jan", "Ene", 1)
+	date = strings.Replace(date, "Apr", "Abr", 1)
+	date = strings.Replace(date, "Aug", "Ago", 1)
+	date = strings.Replace(date, "Dec", "Dic", 1)
+	return date
+}
 func GroupedBarcodesFile(products []Product) *gofpdf.Fpdf {
 	pdf := gofpdf.NewCustom(&gofpdf.InitType{
 		UnitStr: "mm",
@@ -335,7 +342,6 @@ func GetReportFile(total float64, totalSales float64,
 	row = sheet.AddRow()
 	row.SetHeight(20.0)
 	cell = row.AddCell()
-	cell = row.AddCell()
 
 	for _, sth := range salesTableHeaders {
 		cell = row.AddCell()
@@ -354,8 +360,7 @@ func GetReportFile(total float64, totalSales float64,
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
-		dateArr := strings.Split(date, "-")
-		cell.Value = fmt.Sprintf("%s%s%s", dateArr[2], dateArr[1], dateArr[0])
+		cell.Value = spanishD(sale.Timestamp.Format("02/Jan/2006"))
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
@@ -470,7 +475,6 @@ func GetReportFileForUser(sellers []Seller, sales []Sale, date string, place str
 	row = sheet.AddRow()
 	row.SetHeight(20.0)
 	cell = row.AddCell()
-	cell = row.AddCell()
 	for _, sth := range salesTableUserHeaders {
 		cell = row.AddCell()
 		cell.SetStyle(hStyle)
@@ -486,8 +490,7 @@ func GetReportFileForUser(sellers []Seller, sales []Sale, date string, place str
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
-		dateArr := strings.Split(date, "-")
-		cell.Value = fmt.Sprintf("%s%s%s", dateArr[2], dateArr[1], dateArr[0])
+		cell.Value = spanishD(sale.Timestamp.Format("02/Jan/2006"))
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
@@ -606,7 +609,7 @@ func GetInventoryFile(products []Product) *xlsx.File {
 
 		cell = row.AddCell()
 		cell.SetStyle(cStyle)
-		cell.Value = product.RegDate.Format("02-01-2006")
+		cell.Value = product.RegDate.Format("02/Jan/2006")
 
 		cell = row.AddCell()
 		cell.Value = product.Code

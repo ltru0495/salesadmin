@@ -103,7 +103,7 @@ next.addEventListener('click', (e)=>{
 filters.forEach(filter => {
     rxs[filter] = ""
     document.getElementById(`${filter}Query`).addEventListener('input', (event) => {
-        // if (event.key === "Enter") {
+        if (event.key === "Enter") {
         currentPage = 1
         fetchData(currentPage)
         // }
