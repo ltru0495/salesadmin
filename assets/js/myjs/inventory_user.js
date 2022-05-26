@@ -38,7 +38,7 @@ function getURLParams(){
     filters.forEach(filter => {  
         const f = document.getElementById(`${filter}Query`)
 
-        rxs[filter] = f.value 
+        rxs[filter] = f.value .toUpperCase()
     })
 }
 function fetchData(page) {

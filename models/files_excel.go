@@ -35,9 +35,9 @@ func InventoryFile(products []Product) *xlsx.File {
 	for _, v := range headers {
 		hStyle := headersStyle()
 		cell = row.AddCell()
-		if v == "FECHA DE REGISTRO" {
-			highlight(hStyle)
-		}
+		// if v == "FECHA DE REGISTRO" {
+		// highlight(hStyle)
+		// }
 		cell.SetStyle(hStyle)
 		cell.Value = v
 	}
@@ -54,11 +54,20 @@ func InventoryFile(products []Product) *xlsx.File {
 
 		for _, val := range fields {
 			cStyle := contentStyle(flag)
-			if val == "regdate" {
-				highlight(cStyle)
-			}
 			cell = row.AddCell()
 			cell.SetStyle(cStyle)
+			// if val == "regdate" {
+			// highlight(cStyle)
+			// }
+			if val == "price" {
+				floatV, err := strconv.ParseFloat(p[val], 64)
+				if err != nil {
+					log.Println(err)
+				}
+				cell.SetFloatWithFormat(floatV, "###.00")
+			} else {
+				cell.Value = p[val]
+			}
 			cell.Value = p[val]
 		}
 

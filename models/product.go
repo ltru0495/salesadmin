@@ -58,7 +58,7 @@ func (p *Product) ToMap() map[string]string {
 	m := make(map[string]string)
 	j, _ := json.Marshal(p)
 	json.Unmarshal(j, &m)
-	m["price"] = fmt.Sprintf("S/ %.02f", p.Price)
+	m["price"] = fmt.Sprintf("%.02f", p.Price)
 	m["size"] = fmt.Sprintf("%d", p.Size)
 	m["regdate"] = spanishDate(p.RegDate.Format("02-Jan-2006"))
 	return m
