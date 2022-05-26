@@ -360,7 +360,7 @@ func GetReportFile(total float64, totalSales float64,
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
-		cell.Value = spanishD(sale.Timestamp.Format("02/Jan/2006"))
+		cell.Value = sale.Timestamp.Format("02/01/2006")
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
@@ -490,7 +490,7 @@ func GetReportFileForUser(sellers []Seller, sales []Sale, date string, place str
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
-		cell.Value = spanishD(sale.Timestamp.Format("02/Jan/2006"))
+		cell.Value = sale.Timestamp.Format("02/01/2006")
 		cell.SetStyle(cStyle)
 
 		cell = row.AddCell()
@@ -609,7 +609,7 @@ func GetInventoryFile(products []Product) *xlsx.File {
 
 		cell = row.AddCell()
 		cell.SetStyle(cStyle)
-		cell.Value = product.RegDate.Format("02/Jan/2006")
+		cell.Value = product.RegDate.Format("02/01/2006")
 
 		cell = row.AddCell()
 		cell.Value = product.Code
