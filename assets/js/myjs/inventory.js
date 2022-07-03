@@ -30,8 +30,10 @@ function createDeleteBtn(code) {
 
 function createRow(p) {
     const tr = document.createElement("tr")
+    tr.id = p.code
+    tr.className = "inventory__row"
     tr.innerHTML = `
-    <td class="table__cell">${p.code}</td>
+    <td class="table__cell code_cell">${p.code}</a></td>
     <td class="table__cell">${p.brand}</td>
     <td class="table__cell">${p.pfc}</td>
     <td class="table__cell">${p.size}</td>
@@ -70,6 +72,80 @@ function getURLParams(){
         rxs[filter] = f.value.toUpperCase()
     })
 }
+
+let modal_location =""
+let modal_code
+$("#modal__cajamarca").on("click", () => {
+    modal_location = "CAJAMARCA"
+    document.getElementById("modal__cajamarca").style.background ="#3ebf4c"
+    document.getElementById("modal__loreto").style.background ="white"
+    
+})
+$("#modal__loreto").on("click", () => {
+    modal_location = "LORETO"
+    document.getElementById("modal__loreto").style.background ="#3ebf4c"
+    document.getElementById("modal__cajamarca").style.background ="white"
+})
+let fields = ["code", "pfc", "brand", "serie", "size", "model", "note", "price"]
+function modalEdit(code) {
+    modal_location = ""
+    modal_code = code
+    fields.forEach(field => {
+        document.getElementById(`modal__${field}`).value = ""
+    })
+    document.getElementById("modal__cajamarca").style.background ="white"
+    document.getElementById("modal__loreto").style.background ="white"
+    
+    fetch(url_server+`/api/producto/${code}?`).then(r => r.json())
+    .then(resp => {
+        fields.forEach(field => {
+            document.getElementById(`modal__${field}`).value = resp[field]
+        })
+        if(resp.location =="LORETO"){
+            modal_location ="LORETO"
+            document.getElementById("modal__loreto").style.background ="#3ebf4c"
+        } else {
+            modal_location ="CAJAMARCA"
+            document.getElementById("modal__cajamarca").style.background ="#3ebf4c"
+        }
+
+            
+    })
+    $('#modal__edit').modal('show');
+}
+
+document.getElementById("modal__save-edit").addEventListener('click', e  =>{
+    e.preventDefault()
+    let product = {}
+    fields.forEach(field => {
+        product[field] =  document.getElementById(`modal__${field}`).value
+    })
+    product.location = modal_location
+    console.log(product)
+    $.ajax({
+        type: "PUT",
+        url: `/api/producto/${modal_code}`,
+        data: product,
+        success: (r) =>{
+            $('#modal__edit').modal('hide');
+            document.getElementById(modal_code).style.background = "#b4dceb"
+            setTimeout(()=>{
+                document.getElementById(modal_code).style.background = "white"
+            }, 600)
+            let elems = Array.from(document.getElementById(modal_code).children)
+            elems[1].innerText = document.getElementById("modal__brand").value
+            elems[2].innerText = document.getElementById("modal__pfc").value
+            elems[3].innerText = document.getElementById("modal__size").value
+            elems[4].innerText = document.getElementById("modal__model").value
+            elems[5].innerText = document.getElementById("modal__price").value
+            elems[6].innerText = modal_location
+            elems[7].innerText = document.getElementById("modal__note").value
+        },
+    }).fail(() =>{
+        alert("Error en el servidor")
+    })
+})
+
 function fetchData(page) {
     getURLParams()
     fetch(url_server+`/api/inventory/${page}?`+new URLSearchParams(rxs))
@@ -79,6 +155,12 @@ function fetchData(page) {
         response.products.forEach(p => {
             table.appendChild(createRow(p))
         })
+
+        Array.from(document.getElementsByClassName("code_cell"))
+        .forEach( el =>  el.addEventListener('click', ()=> {
+            modalEdit(el.innerHTML.trim())
+        }))
+
         total = response.pageCount
 
         currentPage = page
@@ -145,10 +227,8 @@ next.addEventListener('click', (e)=>{
 filters.forEach(filter => {
     rxs[filter] = ""
     document.getElementById(`${filter}Query`).addEventListener('input', (event) => {
-        // if (event.key === "Enter") {
         currentPage = 1
         fetchData(currentPage)
-        // }
     })
 })
 
@@ -184,8 +264,6 @@ function deleteProduct(str) {
 
 $('#pdf').on('click', function(event) {
     event.preventDefault();
-
-    ;
     if ($('input[name="type"]:checked').val() != "almacen") {
         var base = "/barcodes/pdf?code=" + currentCode + "&n=1&size=s";
     } else {
@@ -200,9 +278,5 @@ $('#pdf').on('click', function(event) {
             window.open(res.message, '_blank');
         }
     });
-
-
-
     $('#pdflink').attr('href', base)
-
 });

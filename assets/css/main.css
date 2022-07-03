@@ -252,17 +252,23 @@ tfoot  {
 	width: 100px;
 }
 
-.pmOption {
+.pmOption, .modal__locOption {
 	margin: 10px;
 	padding: 10px;
+	border-radius: 5px;
 }
 
-
-.pmOption:hover {
+.pmOption:hover, .modal__locOption:hover {
 	cursor: pointer;
 	border: 1px solid black;
 	border-radius: 5px;
 }
 
-.selected {
+.code_cell {
+	cursor: pointer;
+	color: rgb(0, 183, 255);
+}
+
+.inventory__row {
+	transition: all 0.5s ease;
 }

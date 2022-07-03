@@ -4,7 +4,6 @@ import (
 	"admin/utils"
 	"context"
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -56,7 +55,6 @@ func GetDB() *mongo.Database {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("Connected to MongoDB")
 	return client.Database("salesadmin")
 }
 

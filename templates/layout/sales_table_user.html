@@ -46,6 +46,7 @@
         <table id="refundsTable" class="table">
             <thead>
                 <tr>
+                    <th>Hora</th>
                     <th>Código</th>
                     <th>Marca</th>
                     <th>Modelo</th>
@@ -59,6 +60,7 @@
             <tbody>
                 {{ range .Refunds }}
                 <tr>
+                    <td>{{ .GetTimestamp }}</td>
                     <td>{{ .Code }}</td>
                     <td>{{ .Brand }}</td>
                     <td>{{ .Model }}</td>

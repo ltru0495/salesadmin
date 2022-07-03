@@ -12,8 +12,8 @@
                     <tr>
                         <th>Hora</th>
                         {{ if $isIndex }}
-			<th>Código</th>
-			{{ end }}
+                        <th>Código</th>
+                        {{ end }}
                         <th>Marca</th>
                         <th>Código</th>
                         <th>Modelo</th>
@@ -29,8 +29,8 @@
                     <tr>
                         <td>{{ .GetTimestamp }}</td>
                         {{ if $isIndex }}
-			<td> {{ .Code }}</td>
-			{{ end }}
+			            <td> {{ .Code }}</td>
+			            {{ end }}
                         <td>{{ .Brand }}</td>
                         <td>{{ .Code }}</td>
                         <td>{{ .Model }}</td>
@@ -146,7 +146,7 @@
                     {{ range .Refunds }}
                     <tr>
                         <td>{{ .GetTimestamp }}</td>
-			<td>{{ .Code }} </td>
+			            <td>{{ .Code }} </td>
                         <td>{{ .Brand }}</td>
                         <td>{{ .Model }}</td>
                         <td>{{ .Size }}</td>

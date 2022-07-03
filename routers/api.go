@@ -18,6 +18,7 @@ func SetApiRoutes(router *mux.Router) *mux.Router {
 	router.HandleFunc("/api/ventas/exportar/{location}/{start}/{end}", api.GetSalesFile).Methods("GET")
 
 	router.HandleFunc("/api/producto/{code}", api.GetProduct).Methods("GET")
+	router.HandleFunc("/api/producto/{code}", api.UpdateProduct).Methods("PUT")
 	router.HandleFunc("/api/marcas", api.GetBrands).Methods("GET")
 	router.HandleFunc("/api/modelos", api.GetModels).Methods("GET")
 	router.HandleFunc("/api/barcodes", api.GetLastProducts).Methods("GET")

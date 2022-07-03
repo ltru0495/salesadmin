@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 
 	"github.com/gorilla/mux"
+	"github.com/gorilla/schema"
 	"github.com/jung-kurt/gofpdf"
 
 	"log"
@@ -14,24 +15,45 @@ import (
 )
 
 func GetProduct(w http.ResponseWriter, r *http.Request) {
-
 	params := mux.Vars(r)
-
 	code := params["code"]
 	product, err := database.GetProductByCode(code)
 	if err != nil {
 		log.Println(err)
 		return
 	}
-
 	j, err := json.Marshal(product)
 	if err != nil {
-		utils.DisplayAppError(w, err, "An unexpected error has ocurred", 500)
+		w.Write([]byte{})
 		return
 	}
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(j)
+}
+
+func UpdateProduct(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+	code := params["code"]
+	err := r.ParseForm()
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Header().Set("Content-Type", "application/json")
+		return
+	} else {
+		product := new(models.Product)
+		decoder := schema.NewDecoder()
+		err = decoder.Decode(product, r.PostForm)
+
+		err = database.UpdateProductByCode(code, product)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			w.Header().Set("Content-Type", "application/json")
+			return
+		}
+		w.WriteHeader(http.StatusOK)
+		w.Header().Set("Content-Type", "application/json")
+	}
 }
 
 func ProductChecked(w http.ResponseWriter, r *http.Request) {

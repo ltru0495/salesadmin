@@ -66,8 +66,6 @@ function checkButtons(){
 function checkPages(){
     pageCount.value = total
     pageNum.value = currentPage
-
-
 }
 fetchData(currentPage)
 
@@ -100,15 +98,15 @@ next.addEventListener('click', (e)=>{
     fetchData(page)
 })
 
+
 filters.forEach(filter => {
     rxs[filter] = ""
     document.getElementById(`${filter}Query`).addEventListener('input', (event) => {
-        if (event.key === "Enter") {
         currentPage = 1
         fetchData(currentPage)
-        // }
     })
 })
+
 document.getElementById("search").addEventListener('click', ()=>{
     const filters = document.getElementById('filterRow')
     filters.classList.toggle('hidden')
@@ -157,9 +155,5 @@ $('#pdf').on('click', function(event) {
             window.open(res.message, '_blank');
         }
     });
-
-
-
     $('#pdflink').attr('href', base)
-
 });

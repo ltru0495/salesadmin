@@ -1,0 +1,95 @@
+{{ define "modalEditProduct"}}
+<div class="modal fade" id="modal__edit" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Editar Producto</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="container-fluid">
+                <form class="form">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Código de producto</label>
+                                <input type="text" class="form-control" name="code" id="modal__code" readonly>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>C. Fábrica</label>
+                                <input type="text" class="form-control" placeholder="Codigo de fabrica" name="pfc" id="modal__pfc"  >
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Marca</label>
+                                <input type="text" class="form-control" placeholder="Marca del producto" minlength="3" name="brand" id="modal__brand" required >
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Serie</label>
+                                <input type="text" class="form-control" id="modal__serie" name="serie" placeholder="21-22" required >
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Talla</label>
+                                <input type="text" class="form-control" placeholder="Ingrese la talla del producto" name="size" id="modal__size" required >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Modelo</label>
+                                <input type="text" class="form-control" placeholder="Ingrese modelo del producto" name="model" id="modal__model" required >
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Costo</label>
+                                <input type="text" class="form-control" placeholder="Ingrese el precio del producto" name="price" id="modal__price" required >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Ubicación</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 modal__location-option">
+                            <span class="modal__locOption" id="modal__cajamarca">CAJAMARCA</span>
+                        </div>
+                        <div class="col-md-4 modal__location-option">
+                            <span class="modal__locOption" id="modal__loreto">LORETO</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Nota</label>
+                                <input type="text" class="form-control" id="modal__note" name="note" >
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="modal__save-edit" type="button" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ end }}

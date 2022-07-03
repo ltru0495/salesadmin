@@ -63,7 +63,7 @@ $(function() {
             $('input[type="radio"]input[value="'+$(this).val()+'"]').parent().css("background-color", "#3ebf4c")
             $('input[type="radio"]input[value="'+$(this).val()+'"]').parent().css("border", "solid")
         }
-      });
+    });
       
     $('#brand').on('input', function() {
         $('#brand').val($('#brand').val().toUpperCase());
