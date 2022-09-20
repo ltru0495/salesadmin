@@ -8,12 +8,20 @@ import (
 	"net/http"
 
 	"admin/models"
+	"os"
 )
 
 func main() {
+	f, err := os.OpenFile("server.log", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
+	if err != nil {
+		log.Fatal("Error")
+	}
+	defer f.Close()
+
+	log.SetOutput(f)
 
 	var user models.User
-	user.Username = "admin"
+	user.Username = "admin2"
 	user.Password = "admin"
 	user.Name = "administrador"
 	user.Role = "admin"

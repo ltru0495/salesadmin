@@ -39,21 +39,25 @@ func pagOpts(limit, page int64) *options.FindOptions {
 
 func GetDB() *mongo.Database {
 	uri := "mongodb://127.0.0.1:27017/"
-	ctx, timeout := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, timeout := context.WithTimeout(context.Background(), 60*time.Second)
 	defer timeout()
 
 	client, err := mongo.NewClient(options.Client().ApplyURI(uri))
 	if err != nil {
-		log.Fatal(err)
+		log.Println("Error Connecting to DB")
+		log.Println(err)
 	}
 
 	err = client.Connect(ctx)
 	if err != nil {
-		log.Fatal(err)
+		log.Println("Error connecting")
+		log.Println(err)
+		return nil
 	}
 	err = client.Ping(ctx, nil)
 	if err != nil {
-		log.Fatal(err)
+		log.Println("Erorr pinging")
+		log.Println(err)
 	}
 	return client.Database("salesadmin")
 }
@@ -99,11 +103,33 @@ func pages(count, limit int64) int64 {
 }
 
 func Inventory(w http.ResponseWriter, r *http.Request) {
-	var DB *mongo.Database = GetDB()
+//	var DB *mongo.Database = GetDB()
+	uri := "mongodb://127.0.0.1:27017/"
+	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI(uri))
+	if err != nil {
+		log.Println(err)
+		return
+	}
+
+	defer func() {
+		if err = client.Disconnect(context.TODO()); err != nil {
+			log.Println(err)
+			return
+		}
+	}()
+
+	err = client.Ping(context.TODO(), nil)
+	if err != nil {
+		log.Println(err)
+		return
+	}
+	collection :=	client.Database("salesadmin").Collection ("products")
+
+
 
 	vars := mux.Vars(r)
 	page, _ := strconv.Atoi(vars["page"])
-	collection := GetCollection(DB, "products")
+	//collection := GetCollection(DB, "products")
 
 	filter := getFilter(r)
 	// log.Println(filter)
@@ -115,14 +141,16 @@ func Inventory(w http.ResponseWriter, r *http.Request) {
 
 	count, err := collection.CountDocuments(context.TODO(), filter)
 	if err != nil {
-		log.Fatal(err)
+		log.Println("Error counting Documents")
+		log.Println(err)
 	}
 
 	// f := bson.D{{"size", 25}}
 
 	cur, err := collection.Find(ctx, filter, opts)
 	if err != nil {
-		log.Fatal(err)
+		log.Println("error finding")
+		log.Println(err)
 	}
 
 	result := []Product{}
@@ -144,7 +172,9 @@ func Inventory(w http.ResponseWriter, r *http.Request) {
 		Products:  result,
 	})
 	if err != nil {
-		log.Fatal(err)
+		log.Println("Error marshaling")
+		log.Println(err)
+		return
 	}
 
 	w.Write(j)

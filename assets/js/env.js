@@ -1,1 +1,1 @@
-var url_server = 'http://localhost:9000';
+var url_server = 'https://www.tiendasmadoh.com'
