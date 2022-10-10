@@ -10,7 +10,7 @@ function createRow(p) {
     const tr = document.createElement("tr")
     tr.innerHTML = `
     <td class="table__cell">${p.brand}</td>
-    <td class="table__cell">${p.pfc}</td>
+    <td class="table__cell">${p.sprice}</td>
     <td class="table__cell">${p.size}</td>
     <td class="table__cell">${p.model}</td>
     <td class="table__cell">${p.location}</td>
@@ -22,7 +22,7 @@ function createRow(p) {
 
 
 let rxs = {}
-const filters = ["brand", "pfc","size", "model", "location", "note"]
+const filters = ["brand", "sprice","size", "model", "location", "note"]
 
 let currentPage = 1
 let total = Number.MAX_VALUE

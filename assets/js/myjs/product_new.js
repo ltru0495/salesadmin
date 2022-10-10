@@ -4,7 +4,7 @@ $(function() {
 
 
     var code, brand = "",
-        serie, size, model, price, quantity, location, note, pfc;
+        serie,  model, price, quantity, location, note, sprice, category;
     var flag = true;
 
     var optionBrands = {
@@ -114,9 +114,9 @@ $(function() {
     $('#model').on('change', function() {
         $('#model').val($('#model').val().toUpperCase());
     });
-    $('#pfc').on('change', function() {
-        $('#pfc').val($('#pfc').val().toUpperCase());
-    });
+    // $('#pfc').on('change', function() {
+    //     $('#pfc').val($('#pfc').val().toUpperCase());
+    // });
 
     $('#price').on('change', function() {
         var price = Number($('#price').val());
@@ -137,11 +137,13 @@ $(function() {
         quantity = $('#quantity').val();
         location = $('input[name="location"]:checked').val()
         note = $('#note').val();
-        pfc = $('#pfc').val();
+        category = $('#category').val();
+        sprice = $('#sprice').val();
+        // pfc = $('#pfc').val();
 
-        if (pfc === "") {
-            pfc = "S/N";
-        } 
+        // if (pfc === "") {
+        //     pfc = "S/N";
+        // } 
     }
 
     function appendSizes(min, max) {
@@ -204,6 +206,7 @@ $(function() {
             quantity = $('#size_' + i).val();
             if (quantity == "") quantity = "0";
             code = generateCode( size);
+
             product = {
                 code: code,
                 brand: brand,
@@ -214,8 +217,11 @@ $(function() {
                 size: Number(size),
                 location: location,
                 note: note,
-                pfc: pfc
+                category: category,
+                sprice: Number(sprice)
+                // pfc: pfc
             };
+            console.log(product);
             if (product.quantity != 0) {
                 products.push(product);
             }

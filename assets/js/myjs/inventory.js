@@ -35,7 +35,7 @@ function createRow(p) {
     tr.innerHTML = `
     <td class="table__cell code_cell">${p.code}</a></td>
     <td class="table__cell">${p.brand}</td>
-    <td class="table__cell">${p.pfc}</td>
+    <td class="table__cell">${p.sprice}</td>
     <td class="table__cell">${p.size}</td>
     <td class="table__cell">${p.model}</td>
     <td class="table__cell">${p.price}</td>
@@ -53,7 +53,7 @@ function createRow(p) {
 
 
 let rxs = {}
-const filters = ["code", "brand", "pfc","size", "model", "price", "location", "note"]
+const filters = ["code", "brand", "sprice","size", "model", "price", "location", "note"]
 
 let currentPage = 1
 let total = Number.MAX_VALUE
@@ -86,7 +86,7 @@ $("#modal__loreto").on("click", () => {
     document.getElementById("modal__loreto").style.background ="#3ebf4c"
     document.getElementById("modal__cajamarca").style.background ="white"
 })
-let fields = ["code", "pfc", "brand", "serie", "size", "model", "note", "price"]
+let fields = ["code", "sprice", "brand", "serie", "size", "model", "note", "price"]
 function modalEdit(code) {
     modal_location = ""
     modal_code = code
@@ -134,7 +134,7 @@ document.getElementById("modal__save-edit").addEventListener('click', e  =>{
             }, 600)
             let elems = Array.from(document.getElementById(modal_code).children)
             elems[1].innerText = document.getElementById("modal__brand").value
-            elems[2].innerText = document.getElementById("modal__pfc").value
+            elems[2].innerText = document.getElementById("modal__sprice").value
             elems[3].innerText = document.getElementById("modal__size").value
             elems[4].innerText = document.getElementById("modal__model").value
             elems[5].innerText = document.getElementById("modal__price").value

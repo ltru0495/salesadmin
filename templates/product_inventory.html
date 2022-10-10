@@ -28,7 +28,7 @@
                                     {{if (eq .User.Role "admin")}}
                                             <span style="float:right;"> 
                                             <a class="btn btn-primary btn-fill" href="/inventario/exportar">Descargar Inventario</a></span>
-                                            {{end}}
+                                    {{end}}
                                             </h1>
                                     </div>
                                     <div class="card-body">
@@ -37,7 +37,7 @@
                                                 <tr>
                                                     <th>CÓDIGO</th>
                                                     <th>MARCA</th>
-                                                    <th>C. FÁBRICA</th>
+                                                    <th>PRECIO SUGERIDO</th>
                                                     <th>TALLA</th>
                                                     <th>MODELO</th>
                                                     <th>PRECIO</th>
@@ -48,7 +48,7 @@
                                                 <tr id="filterRow">
                                                     <th><input id="codeQuery" class="filterInput" type="text"></th>
                                                     <th><input id="brandQuery" class="filterInput" type="text"></th>
-                                                    <th><input id="pfcQuery" class="filterInput" type="text"></th>
+                                                    <th><input id="spriceQuery" class="filterInput" type="text"></th>
                                                     <th><input id="sizeQuery" class="filterInput" type="text"></th>
                                                     <th><input id="modelQuery" class="filterInput" type="text"></th>
                                                     <th><input id="priceQuery" class="filterInput" type="text"></th>

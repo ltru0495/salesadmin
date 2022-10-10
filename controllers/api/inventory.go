@@ -17,13 +17,15 @@ import (
 
 type Product struct {
 	Code     string  `json:"code" bson:"code"`
-	Brand    string  `json:"brand" json:"brand"`
+	Brand    string  `json:"brand" bson:"brand"`
 	PFC      string  `json:"pfc" bson:"pfc"` //Factory Product Code
 	Size     int     `json:"size" bson:"size"`
 	Model    string  `json:"model" bson:"model"`
 	Price    float64 `json:"price" bson:"price"`
+	SPrice   float64 `json:"sprice" bson:"sprice"`
 	Location string  `json:"location" bson:"location"`
 	Note     string  `json:"note" bson:"note"`
+	Category string  `json:"category" bson:"category"`
 }
 
 type Response struct {
@@ -32,34 +34,8 @@ type Response struct {
 }
 
 func pagOpts(limit, page int64) *options.FindOptions {
-	var skip int64
-	skip = limit * (page - 1)
+	skip := limit * (page - 1)
 	return &options.FindOptions{Limit: &limit, Skip: &skip}
-}
-
-func GetDB() *mongo.Database {
-	uri := "mongodb://127.0.0.1:27017/"
-	ctx, timeout := context.WithTimeout(context.Background(), 60*time.Second)
-	defer timeout()
-
-	client, err := mongo.NewClient(options.Client().ApplyURI(uri))
-	if err != nil {
-		log.Println("Error Connecting to DB")
-		log.Println(err)
-	}
-
-	err = client.Connect(ctx)
-	if err != nil {
-		log.Println("Error connecting")
-		log.Println(err)
-		return nil
-	}
-	err = client.Ping(ctx, nil)
-	if err != nil {
-		log.Println("Erorr pinging")
-		log.Println(err)
-	}
-	return client.Database("salesadmin")
 }
 
 func GetCollection(db *mongo.Database, c string) *mongo.Collection {
@@ -75,10 +51,10 @@ func PrintProducts(prods []Product) {
 func getFilter(r *http.Request) bson.M {
 	filter := bson.M{}
 	// fields := []string{"code", "brand", "pfc", "size", "model", "price"}
-	fields := []string{"code", "brand", "pfc", "size", "model", "price", "location", "note"}
+	fields := []string{"code", "brand", "sprice", "size", "model", "price", "location", "note"}
 	for _, f := range fields {
 		regex := r.URL.Query().Get(f)
-		if f == "size" || f == "price" {
+		if f == "size" || f == "price" || f == "sprice" {
 			s, _ := strconv.Atoi(regex)
 			if s != 0 {
 				filter[f] = s
@@ -103,7 +79,7 @@ func pages(count, limit int64) int64 {
 }
 
 func Inventory(w http.ResponseWriter, r *http.Request) {
-//	var DB *mongo.Database = GetDB()
+	//	var DB *mongo.Database = GetDB()
 	uri := "mongodb://127.0.0.1:27017/"
 	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI(uri))
 	if err != nil {
@@ -123,9 +99,7 @@ func Inventory(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 		return
 	}
-	collection :=	client.Database("salesadmin").Collection ("products")
-
-
+	collection := client.Database("salesadmin").Collection("products")
 
 	vars := mux.Vars(r)
 	page, _ := strconv.Atoi(vars["page"])

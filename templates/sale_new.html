@@ -32,30 +32,42 @@
                                                         <input type="text" class="form-control" name="code" id="code"  autocomplete="off" required>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <label></label>
                                                     <div class="form-group">
                                                         <button class="btn btn-dark btn-fill" id="productButton">OK</button>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-2">
+                                                    <label>Precio Sugerido</label>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" name="sprice" id="sprice" disabled>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-4">
+                                                <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label>Marca</label>
                                                         <input type="text" class="form-control" placeholder="Marca del producto" minlength="3" name="brand" id="brand" readonly required>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label>Series</label>
                                                         <input type="text" class="form-control" id="serie" name="serie" placeholder="Serie" readonly required>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label>Tienda</label>
                                                         <input type="text" class="form-control" name="place" placeholder="Vendedor" id="place" value="{{.User.Name}}" readonly required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label>Comentario Producto</label>
+                                                        <input type="text" class="form-control" name="pnote"  id="pnote" readonly required>
                                                     </div>
                                                 </div>
                                                 
@@ -191,6 +203,10 @@
                                 <tr>
                                     <td class="modal-name">Tienda</td>
                                     <td id="modal-place"></td>
+                                </tr>
+                                <tr>
+                                    <td class="modal-name">Comentario Producto</td>
+                                    <td id="modal-pnote"></td>
                                 </tr>
                                 <tr>
                                     <td class="modal-name">Comentario</td>

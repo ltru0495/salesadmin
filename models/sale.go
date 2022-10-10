@@ -26,6 +26,8 @@ type Sale struct {
 	Place  string  `json:"place" bson:"place"` //Lugar de venta
 	Price  float64 `json:"price" bson:"price"`
 
+	PNote string `json:"pnote" bson:"pnote"`
+
 	Comment   string    `json:"comment" bson:"comment"`
 	Timestamp time.Time `json:"timestamp" bson:"timestamp"`
 	RegDate   time.Time `json:"regdate" bson:"regdate"`
@@ -146,8 +148,7 @@ func GetTotalSalesByPM(sales []Sale, paymentMethod string) float64 {
 }
 
 func GetSellers(sales []Sale) []Seller {
-	var s map[string]int
-	s = make(map[string]int)
+	s := make(map[string]int)
 
 	var sellers []Seller
 

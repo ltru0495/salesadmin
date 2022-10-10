@@ -13,7 +13,7 @@ type Product struct {
 
 	// Obligatorios
 	Code     string  `json:"code" bson:"code"`
-	Brand    string  `json:"brand" json:"brand"`
+	Brand    string  `json:"brand" bson:"brand"`
 	Serie    string  `json:"serie" bson:"serie" `
 	Size     int     `json:"size" bson:"size"`
 	Model    string  `json:"model" bson:"model"`
@@ -23,7 +23,10 @@ type Product struct {
 	PFC      string  `json:"pfc" bson:"pfc"` //Factory Product Code
 	//
 
-	Check bool `json:"check" bson:"check"`
+	Category string `json:"category" bson:"category"`
+
+	Check  bool    `json:"check" bson:"check"`
+	SPrice float64 `json:"sprice" bson:"sprice"`
 
 	Note    string    `json:"note" bson:"note"`
 	RegDate time.Time `json:"regdate" bson:"regdate"`
@@ -59,6 +62,7 @@ func (p *Product) ToMap() map[string]string {
 	j, _ := json.Marshal(p)
 	json.Unmarshal(j, &m)
 	m["price"] = fmt.Sprintf("%.02f", p.Price)
+	m["sprice"] = fmt.Sprintf("%0.02f", p.SPrice)
 	m["size"] = fmt.Sprintf("%d", p.Size)
 	m["regdate"] = spanishDate(p.RegDate.Format("02/01/2006"))
 	return m

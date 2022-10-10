@@ -55,7 +55,10 @@ $(function () {
 				$('#size').val(product.size);
 				$('#model').val(product.model);
 				$('#location').val(product.location);
-				$('#date').val(sale.regdate);
+				$('#date').val(product.regdate);
+				$('#sprice').val(product.sprice);
+				$('#pnote').val(product.note);
+				
 
 				// console.log(product);
 			}).fail(function() {
@@ -107,6 +110,7 @@ $(function () {
 			location: getField('location'),
 			comment: getField('comment'),
 			payment_method: pm,
+			pnote: getField('pnote'),
 		}
 		return sale;
 	}
@@ -151,6 +155,7 @@ $(function () {
 		setModalField('price');
 		setModalField('payment_method');
 		setModalField('place');
+		setModalField('pnote');
 		setModalField('comment');
 
 		if (pm === ""){

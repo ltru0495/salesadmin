@@ -32,6 +32,7 @@ func ManyProducts(w http.ResponseWriter, r *http.Request) {
 		for k := 1; k <= quantity; k++ {
 			product.Code = code + fmt.Sprintf("%03d", k)
 			product.Quantity = 1
+			log.Println(product)
 			err = database.InsertProduct(&product)
 			if err != nil {
 				break

@@ -12,7 +12,7 @@ import (
 )
 
 var salesTableHeaders = [...]string{"FECHA DE VENTA", "MARCA", "TALLA", "MODELO", "PERTENECE", "VENDEDOR",
-	"LUGAR DE VENTA", "PRECIO DE VENTA", "PRECIO DE COMPRA", "GANANCIA", "COMENTARIO"}
+	"LUGAR DE VENTA", "PRECIO DE VENTA", "PRECIO DE COMPRA", "GANANCIA", "COMENTARIO", "COMENTARIO PRODUCTO"}
 var salesTableUserHeaders = [...]string{"FECHA DE VENTA", "MARCA", "TALLA", "MODELO",
 	"PERTENECE", "VENDEDOR", "PRECIO DE VENTA", "COMENTARIO"}
 var sellersTableHeaders = [...]string{"NOMBRE DE VENDEDOR", "CANTIDAD VENDIDA"}
@@ -94,6 +94,13 @@ func NormalPage(pdf *gofpdf.Fpdf, product Product) {
 	w := 28
 	pdf.Text(x2, marginY+2.0, format(w, product.Brand))
 	pdf.Text(x2, marginY+12.0, format(w, fmt.Sprintf("%d", product.Size)))
+
+	pdf.SetFont("Times", "B", 6)
+
+	if product.SPrice != 0.00 {
+		pdf.Text(barcodeX+25, barcodeY+barcodeH+2.0, format(20, fmt.Sprintf("%.2f", product.SPrice)))
+	}
+
 	w = 45
 	x2 = 40.0
 	modelWords := split(model)
@@ -162,13 +169,17 @@ func LargePage(pdf *gofpdf.Fpdf, product Product) {
 	fCode := format(20, product.Code)
 	pdf.Text(barcodeX, barcodeY+barcodeH+2.0, fCode)
 
+	if product.SPrice != 0.00 {
+		pdf.Text(x2, marginY+30, format(20, fmt.Sprintf("%.2f", product.SPrice)))
+	}
+
 	pdf.SetFont("Times", "B", 65)
 	fSize := format(5, fmt.Sprintf("%d", product.Size))
 	pdf.Text(32.0, 33.0, fSize)
 
 	pdf.SetFont("Times", "B", 6)
-	codeX, codeY := x2, marginY+30.5
-	pdf.Text(codeX, codeY, product.PFC)
+	// codeX, codeY := x2, marginY+30.5
+	// pdf.Text(codeX, codeY, product.PFC)
 	modelWords := split(product.Model)
 	model := product.Model
 	marginY = 13.5
@@ -404,6 +415,10 @@ func GetReportFile(total float64, totalSales float64,
 
 		cell = row.AddCell()
 		cell.Value = sale.Comment
+		cell.SetStyle(cStyle)
+
+		cell = row.AddCell()
+		cell.Value = sale.PNote
 		cell.SetStyle(cStyle)
 
 		flag = !flag

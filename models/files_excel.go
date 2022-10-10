@@ -9,8 +9,8 @@ import (
 )
 
 func InventoryFile(products []Product) *xlsx.File {
-	headers := []string{"Nº", "FECHA DE REGISTRO", "CODIGO", "MARCA", "TALLA", "MODELO", "PRECIO DE COSTO", "UBICACION", "COMENTARIO"}
-	fields := []string{"regdate", "code", "brand", "size", "model", "price", "location", "note"}
+	headers := []string{"Nº", "FECHA DE REGISTRO", "CODIGO", "MARCA", "TALLA", "MODELO", "PRECIO SUGERIDO", "PRECIO DE COSTO", "UBICACION", "COMENTARIO"}
+	fields := []string{"regdate", "code", "brand", "size", "model", "sprice", "price", "location", "note"}
 
 	var file *xlsx.File
 	var sheet *xlsx.Sheet
@@ -59,7 +59,7 @@ func InventoryFile(products []Product) *xlsx.File {
 			// if val == "regdate" {
 			// highlight(cStyle)
 			// }
-			if val == "price" {
+			if val == "price" || val == "sprice" {
 				floatV, err := strconv.ParseFloat(p[val], 64)
 				if err != nil {
 					log.Println(err)
@@ -79,8 +79,9 @@ func InventoryFile(products []Product) *xlsx.File {
 
 // N°	FECHA DE REGISTRO	FECHA DE VENTA	HORA DE VENTA	CODIGO	MARCA	TALLA	MODELO	PRECIO DE COSTO	UBICACION	VENDEDOR	LUGAR DE VENTA	PRECIO DE VENTA	FORMA DE PAGO	COMENTARIO
 func SaleFile(sales []Sale) *xlsx.File {
-	headers := []string{"Nº", "FECHA DE REGISTRO", "FECHA DE VENTA", "HORA DE VENTA", "CODIGO", "MARCA", "TALLA", "MODELO", "PRECIO DE COSTO", "UBICACION", "VENDEDOR", "LUGAR DE VENTA", "PRECIO DE VENTA", "FORMA DE PAGO", "COMENTARIO"}
-	fields := []string{"regdate", "timestamp", "time", "code", "brand", "size", "model", "pricebuy", "location", "seller", "place", "price", "payment_method", "note"}
+	log.Println("AAAAAAAAAAAAAAAAAAAAA")
+	headers := []string{"Nº", "FECHA DE REGISTRO", "FECHA DE VENTA", "HORA DE VENTA", "CODIGO", "MARCA", "TALLA", "MODELO", "PRECIO DE COSTO", "UBICACION", "VENDEDOR", "LUGAR DE VENTA", "PRECIO DE VENTA", "FORMA DE PAGO", "COMENTARIO", "COMENTARIO PRODUCTO"}
+	fields := []string{"regdate", "timestamp", "time", "code", "brand", "size", "model", "pricebuy", "location", "seller", "place", "price", "payment_method", "comment", "pnote"}
 
 	var file *xlsx.File
 	var sheet *xlsx.Sheet

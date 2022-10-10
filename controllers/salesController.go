@@ -124,24 +124,20 @@ func Sales(w http.ResponseWriter, r *http.Request) {
 			log.Println(err)
 		}
 
-		sales, refunds := models.GetSalesAndRefunds(sales)
+		_, refunds := models.GetSalesAndRefunds(sales)
 		if err != nil {
 			log.Println(err)
 		}
 
-		salesC, err := database.GetSalesByDateAndLocation(t, "CAJAMARCA")
+		salesC, _ := database.GetSalesByDateAndLocation(t, "CAJAMARCA")
 		salesC, refundsC := models.GetSalesAndRefunds(salesC)
 		totalSC := models.GetTotal(salesC)
 		totalRC := models.GetTotal(refundsC)
 
-		salesL, err := database.GetSalesByDateAndLocation(t, "LORETO")
+		salesL, _ := database.GetSalesByDateAndLocation(t, "LORETO")
 		salesL, refundsL := models.GetSalesAndRefunds(salesL)
 		totalSL := models.GetTotal(salesL)
 		totalRL := models.GetTotal(refundsL)
-
-		// <td>{{ .TotalPEL }}</td>
-		// <td>{{ .TotalEL }}</td>
-		// <td>{{ .UtilidadL }}</td>
 
 		context["Title"] = "Ventas del día"
 
@@ -152,7 +148,7 @@ func Sales(w http.ResponseWriter, r *http.Request) {
 		context["SalesC"] = salesC
 
 		context["TotalPEC"] = models.GetTotalSalesByPM(salesC, "electronico")
-		context["TotalEC"] = models.GetTotalSalesByPM(salesC, "efectivo")
+		context["TotalEC"] = models.GetTotalSalesByPM(salesC, "efectivo") + totalRC
 		context["UtilidadC"] = models.GetEarning(salesC)
 
 		context["TotalSalesL"] = totalSL

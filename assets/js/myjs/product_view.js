@@ -144,14 +144,14 @@ $(function() {
         price = $('#price').val();
         location = $('input[name="location"]:checked').val()
         note = $('#note').val();
-        pfc = $('#pfc').val();
+        // pfc = $('#pfc').val();
 
-        if (pfc === "") {
-            pfc = "S/N";
-        }
+        // if (pfc === "") {
+        //     pfc = "S/N";
+        // }
         return {
             code: code,
-            pfc: pfc, 
+            // pfc: pfc, 
             brand: brand,
             serie: serie,
             size: size,
