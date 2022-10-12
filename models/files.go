@@ -2,6 +2,7 @@ package models
 
 import (
 	"fmt"
+	"math"
 
 	"github.com/tealeg/xlsx"
 
@@ -98,7 +99,8 @@ func NormalPage(pdf *gofpdf.Fpdf, product Product) {
 	pdf.SetFont("Times", "B", 6)
 
 	if product.SPrice != 0.00 {
-		pdf.Text(barcodeX+25, barcodeY+barcodeH+2.0, format(20, fmt.Sprintf("%.2f", product.SPrice)))
+		x := math.Round(product.SPrice)
+		pdf.Text(barcodeX+25, barcodeY+barcodeH+2.0, format(20, fmt.Sprintf("%.d", int(x))))
 	}
 
 	w = 45
@@ -170,7 +172,8 @@ func LargePage(pdf *gofpdf.Fpdf, product Product) {
 	pdf.Text(barcodeX, barcodeY+barcodeH+2.0, fCode)
 
 	if product.SPrice != 0.00 {
-		pdf.Text(x2, marginY+30, format(20, fmt.Sprintf("%.2f", product.SPrice)))
+		x := math.Round(product.SPrice)
+		pdf.Text(barcodeX+25, barcodeY+barcodeH+2.0, format(20, fmt.Sprintf("%.d", int(x))))
 	}
 
 	pdf.SetFont("Times", "B", 65)
