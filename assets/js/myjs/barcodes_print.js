@@ -15,7 +15,7 @@ $(function() {
         let code = $("#code").val();
 	code = code.toUpperCase();
         $.getJSON(url_server + '/api/producto/' + code, function(product) {
-            var values = [product.code, product.brand, product.serie, product.size, product.model]
+            var values = [product.code, product.brand, product.serie, product.size, product.model, product.sprice]
             appendProductToTable($("#productstable"), values)
             $("#code").val("");
         }).fail(function() {
@@ -41,7 +41,8 @@ $(function() {
                 brand: rows[i].children[1].innerHTML,
                 serie: rows[i].children[2].innerHTML,
                 size: Number(rows[i].children[3].innerHTML),
-                model: rows[i].children[4].innerHTML
+                model: rows[i].children[4].innerHTML,
+                sprice: Number(rows[i].children[5].innerHTML)
             })
         }
 
@@ -72,7 +73,8 @@ $(function() {
                 brand: rows[i].children[1].innerHTML,
                 serie: rows[i].children[2].innerHTML,
                 size: Number(rows[i].children[3].innerHTML),
-                model: rows[i].children[4].innerHTML
+                model: rows[i].children[4].innerHTML,
+                sprice: Number(rows[i].children[5].innerHTML)
             })
         }
 
