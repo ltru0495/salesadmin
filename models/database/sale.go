@@ -33,6 +33,7 @@ func InsertSale(sale *models.Sale) error {
 	sale.Brand = prod.Brand
 	sale.Model = prod.Model
 	sale.Size = prod.Size
+	sale.Category = prod.Category
 	sale.Refunded = false
 
 	sale.PriceBuy = prod.Price

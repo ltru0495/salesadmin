@@ -173,7 +173,7 @@ func LargePage(pdf *gofpdf.Fpdf, product Product) {
 
 	if product.SPrice != 0.00 {
 		x := math.Round(product.SPrice)
-		pdf.Text(barcodeX+25, barcodeY+barcodeH+2.0, format(20, fmt.Sprintf("%.d", int(x))))
+		pdf.Text(x2, marginY+30, format(20, fmt.Sprintf("%.d", int(x))))
 	}
 
 	pdf.SetFont("Times", "B", 65)

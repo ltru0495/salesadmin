@@ -17,6 +17,7 @@ type Sale struct {
 	Serie    string        `json:"serie,omitempty" bson:"serie,omitempty"`
 	Size     int           `json:"size,omitempty" bson:"size,omitempty"`
 	Model    string        `json:"model,omitempty" bson:"model,omitempty"`
+	Category string        `json:"category, omitempty" bson:"category, omitempty"`
 	Location string        `json:"location,omitempty" bson:"location,omitempty"`
 
 	PriceBuy float64 `json:"pricebuy,omitempty" bson:"pricebuy,omitempty"`
