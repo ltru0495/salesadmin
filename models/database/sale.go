@@ -21,6 +21,28 @@ const (
 	BRAND           = "brand"
 	ID              = "_id"
 )
+func InsertSale2(sale *models.Sale) error {
+	sale.Id = bson.NewObjectId()
+	sale.Timestamp = sale.Timestamp	
+	prod, err := GetProductByCode(sale.Code)
+	if err != nil {
+		return errors.New("Error al registrar venta: producto no encontrado")
+	}
+
+	sale.Brand = prod.Brand
+	sale.Model = prod.Model
+	sale.Size = prod.Size
+	sale.Category = prod.Category
+	sale.Refunded = false
+
+	sale.PriceBuy = prod.Price
+	sale.Serie = prod.Serie
+	sale.Earning = sale.Price - prod.Price
+
+	sale.RegDate = prod.RegDate
+	err = insert(SALE_COLLECTION, sale)
+	return err
+}
 
 func InsertSale(sale *models.Sale) error {
 	sale.Id = bson.NewObjectId()

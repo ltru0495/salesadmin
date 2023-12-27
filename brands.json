@@ -1,0 +1,490 @@
+{"_id":{"$oid":"5c673f53d17e81136a273a48"},"name":"ADVENSO"}
+{"_id":{"$oid":"5c6747f7d17e81136a273be1"},"name":"ALLIGATOR"}
+{"_id":{"$oid":"5c76e30191eacbd2c251abea"},"name":"TEST"}
+{"_id":{"$oid":"5c76e35f91eacbd2c251ac19"},"name":"TEST2"}
+{"_id":{"$oid":"5cb8b9f6afca007a62da6827"},"name":"DC IMITACION"}
+{"_id":{"$oid":"5cb8baacafca007a62da6873"},"name":"ARIHANF"}
+{"_id":{"$oid":"5cb8bb00afca007a62da689f"},"name":"BANNAI"}
+{"_id":{"$oid":"5cb8bb3cafca007a62da68bc"},"name":"IVANO"}
+{"_id":{"$oid":"5cb8bb83afca007a62da68d9"},"name":"TNNG"}
+{"_id":{"$oid":"5cb8bcbaafca007a62da6955"},"name":"NEEK"}
+{"_id":{"$oid":"5cb8bd82afca007a62da69a4"},"name":"DC-IMITACION"}
+{"_id":{"$oid":"5cb8e1aaedd6a1bc25517efc"},"name":"SHIALEY"}
+{"_id":{"$oid":"5cb8e23dedd6a1bc25517f3b"},"name":"DROMEDAR"}
+{"_id":{"$oid":"5cb8e2d1edd6a1bc25517fa3"},"name":"ADIDAS-NACIONAL"}
+{"_id":{"$oid":"5cb8e973edd6a1bc255180c9"},"name":"NEW ATHLETIC"}
+{"_id":{"$oid":"5cb8e9f0edd6a1bc2551810e"},"name":"LUNARLON"}
+{"_id":{"$oid":"5cb8ea5eedd6a1bc2551814f"},"name":"VANS-NACIONAL"}
+{"_id":{"$oid":"5cb8ed93edd6a1bc25518201"},"name":"NEW SKATE"}
+{"_id":{"$oid":"5cb92329edd6a1bc255188f8"},"name":"DC-NACIONAL"}
+{"_id":{"$oid":"5cb929fbedd6a1bc25518ad8"},"name":"ADIDAS"}
+{"_id":{"$oid":"5cba036aedd6a1bc2551a4e5"},"name":"MARK-AIR"}
+{"_id":{"$oid":"5cba0cc2edd6a1bc2551a6e7"},"name":"KOREANO"}
+{"_id":{"$oid":"5cba1ac9edd6a1bc2551aa6f"},"name":"FANDEI"}
+{"_id":{"$oid":"5cba314bedd6a1bc2551ad89"},"name":"ULTRALON"}
+{"_id":{"$oid":"5cba3601edd6a1bc2551af19"},"name":"VARELO"}
+{"_id":{"$oid":"5cba3d8bedd6a1bc2551b192"},"name":"I-RUN"}
+{"_id":{"$oid":"5cba3e78edd6a1bc2551b212"},"name":"I-CAX"}
+{"_id":{"$oid":"5cba3ebfedd6a1bc2551b23a"},"name":"YOMAX"}
+{"_id":{"$oid":"5cba4093edd6a1bc2551b28d"},"name":"KOREANA"}
+{"_id":{"$oid":"5cba411cedd6a1bc2551b2bc"},"name":"ICAX"}
+{"_id":{"$oid":"5cba5360edd6a1bc2551b7c0"},"name":"WALON"}
+{"_id":{"$oid":"5cba5d09edd6a1bc2551bb7c"},"name":"BONSSA"}
+{"_id":{"$oid":"5cba620fedd6a1bc2551bded"},"name":"LUNAR"}
+{"_id":{"$oid":"5cba7bfaedd6a1bc2551c74d"},"name":"CLIFOR"}
+{"_id":{"$oid":"5cbb3223edd6a1bc2551e040"},"name":"ESTILOS"}
+{"_id":{"$oid":"5cbb520fedd6a1bc2551e7b3"},"name":"I-ONE"}
+{"_id":{"$oid":"5cbb65dcedd6a1bc2551ee51"},"name":"PUNTO"}
+{"_id":{"$oid":"5cbb863bedd6a1bc2551f3dc"},"name":"CONVERT"}
+{"_id":{"$oid":"5cbb95c7edd6a1bc2551f7df"},"name":"IRUN"}
+{"_id":{"$oid":"5cbba572edd6a1bc2551fb0a"},"name":"BEPURE"}
+{"_id":{"$oid":"5cbbc7e7edd6a1bc2552048c"},"name":"TNG"}
+{"_id":{"$oid":"5cbbc875edd6a1bc255204ff"},"name":"VERCO"}
+{"_id":{"$oid":"5cbbc927edd6a1bc255205a0"},"name":"FATRI"}
+{"_id":{"$oid":"5cbbca9cedd6a1bc25520650"},"name":"VANETTI"}
+{"_id":{"$oid":"5cbbcff8edd6a1bc255207c6"},"name":"BYPIERRE"}
+{"_id":{"$oid":"5cbce160edd6a1bc255229ff"},"name":"SPACE"}
+{"_id":{"$oid":"5cc4ce2eedd6a1bc25530184"},"name":"KLOIS"}
+{"_id":{"$oid":"5cc4d0cdedd6a1bc255303b1"},"name":"CALVOR"}
+{"_id":{"$oid":"5cd5bf4aedd6a1bc25557093"},"name":"NEW-LAND"}
+{"_id":{"$oid":"5cd6192cedd6a1bc25558fcf"},"name":"WE-TEAM"}
+{"_id":{"$oid":"5cd62f3aedd6a1bc25559698"},"name":"BRITANI"}
+{"_id":{"$oid":"5cd6e34dedd6a1bc2555bb9a"},"name":"NEW-SKATE"}
+{"_id":{"$oid":"5cd6e4bbedd6a1bc2555bcd4"},"name":"BLACK-GOLD"}
+{"_id":{"$oid":"5cd71513edd6a1bc2555c874"},"name":"RAGGIO"}
+{"_id":{"$oid":"5cd7153cedd6a1bc2555c8cb"},"name":"RAGGIO "}
+{"_id":{"$oid":"5cd732c3edd6a1bc2555d12e"},"name":"NEW-ATHLETIC"}
+{"_id":{"$oid":"5cd7a9c4edd6a1bc2556001c"},"name":"ECONOMICO"}
+{"_id":{"$oid":"5cd7a9faedd6a1bc2556007d"},"name":"PRETTY"}
+{"_id":{"$oid":"5cd835b0edd6a1bc25561e33"},"name":"PRUEBA"}
+{"_id":{"$oid":"5cd852e4edd6a1bc25562972"},"name":"FILA"}
+{"_id":{"$oid":"5cd862eaedd6a1bc255632ce"},"name":"VIERI"}
+{"_id":{"$oid":"5cd8870fedd6a1bc255640e1"},"name":"AIR RUNNING"}
+{"_id":{"$oid":"5cd896c5edd6a1bc25564865"},"name":"ING"}
+{"_id":{"$oid":"5cd89728edd6a1bc255648c7"},"name":"KEMPO"}
+{"_id":{"$oid":"5cd8995aedd6a1bc25564a20"},"name":"CALPIER"}
+{"_id":{"$oid":"5cd899b4edd6a1bc25564a66"},"name":"RINGOS"}
+{"_id":{"$oid":"5cd899f6edd6a1bc25564aad"},"name":"PECCOS"}
+{"_id":{"$oid":"5cd8b5b6edd6a1bc255651d7"},"name":"CUCUANA"}
+{"_id":{"$oid":"5cd8b797edd6a1bc2556527a"},"name":"SANDER"}
+{"_id":{"$oid":"5cddcb67edd6a1bc25575e84"},"name":"UNICORNIO"}
+{"_id":{"$oid":"5cded9dbedd6a1bc2557975d"},"name":"IMPERIUM "}
+{"_id":{"$oid":"5cdf43c4edd6a1bc2557b773"},"name":"NEW LAND"}
+{"_id":{"$oid":"5cdf49b0edd6a1bc2557b967"},"name":"JORDAN"}
+{"_id":{"$oid":"5ce06970edd6a1bc2557f88c"},"name":"ANGRY BIRDS"}
+{"_id":{"$oid":"5ce06c97edd6a1bc2557f970"},"name":"BARBIE"}
+{"_id":{"$oid":"5ce076e3edd6a1bc2557fc0e"},"name":"KOKEE CHINITA"}
+{"_id":{"$oid":"5ce70351edd6a1bc2559553f"},"name":"CAMILA"}
+{"_id":{"$oid":"5ce70ae6edd6a1bc25595753"},"name":"DANDROOP"}
+{"_id":{"$oid":"5ce81551edd6a1bc255990e2"},"name":"NACIONAL REEBOK"}
+{"_id":{"$oid":"5ce8158dedd6a1bc25599119"},"name":"BRIXTON"}
+{"_id":{"$oid":"5ce81950edd6a1bc25599354"},"name":"SIHALEY"}
+{"_id":{"$oid":"5ce83346edd6a1bc255999c6"},"name":"MATS"}
+{"_id":{"$oid":"5ce8639cedd6a1bc2559a649"},"name":"NAYBOL"}
+{"_id":{"$oid":"5ce87102edd6a1bc2559aa29"},"name":"KNUP"}
+{"_id":{"$oid":"5ce8a060edd6a1bc2559b839"},"name":"IMPERIUM"}
+{"_id":{"$oid":"5ce8a0b1edd6a1bc2559b867"},"name":"LOPEZ"}
+{"_id":{"$oid":"5ce8a0e7edd6a1bc2559b897"},"name":"ANDALOZ"}
+{"_id":{"$oid":"5ce8a28dedd6a1bc2559b97b"},"name":"JITEC"}
+{"_id":{"$oid":"5ce8a2dfedd6a1bc2559b9b1"},"name":"RIPJACK"}
+{"_id":{"$oid":"5ce8a3e7edd6a1bc2559ba79"},"name":"OUTDOOR"}
+{"_id":{"$oid":"5ce8afa0edd6a1bc2559bdf8"},"name":"FERDERLAN"}
+{"_id":{"$oid":"5ce8b09bedd6a1bc2559bfd2"},"name":"FEDERLAN"}
+{"_id":{"$oid":"5cea006dedd6a1bc255a0912"},"name":"THERIUM"}
+{"_id":{"$oid":"5cea022cedd6a1bc255a0acf"},"name":"D-MAURUS"}
+{"_id":{"$oid":"5cead4b2edd6a1bc255a37fc"},"name":"VANS NACIONAL"}
+{"_id":{"$oid":"5ceae8cdedd6a1bc255a3da3"},"name":"TRILINES"}
+{"_id":{"$oid":"5ceae954edd6a1bc255a3e22"},"name":"NIKE NACIONAL"}
+{"_id":{"$oid":"5ceaeba0edd6a1bc255a3fe2"},"name":"BOTIN "}
+{"_id":{"$oid":"5ceaed1aedd6a1bc255a410a"},"name":"LUNA NACIONAL"}
+{"_id":{"$oid":"5ceaf414edd6a1bc255a42c7"},"name":"DERCOS"}
+{"_id":{"$oid":"5cf58695edd6a1bc255c6c91"},"name":"BALENCIAGA"}
+{"_id":{"$oid":"5d28c335edd6a1bc2566fd05"},"name":"WE-AIR"}
+{"_id":{"$oid":"5d2901f0edd6a1bc25671134"},"name":"D BELLITA"}
+{"_id":{"$oid":"5d290248edd6a1bc2567119e"},"name":"BOTINES"}
+{"_id":{"$oid":"5d29032cedd6a1bc25671297"},"name":"AMIGOS"}
+{"_id":{"$oid":"5d2903c6edd6a1bc25671329"},"name":"INGENIEROS"}
+{"_id":{"$oid":"5d2904d6edd6a1bc256714be"},"name":"INGENIERIOS"}
+{"_id":{"$oid":"5d2a594fedd6a1bc25675e76"},"name":"LAGUNA"}
+{"_id":{"$oid":"5d3a0fe8edd6a1bc256aa6f7"},"name":"NEW ATLETIC"}
+{"_id":{"$oid":"5d421579edd6a1bc256c62a3"},"name":"WUALON"}
+{"_id":{"$oid":"5d42ffdaedd6a1bc256c9365"},"name":"EDANDROOP"}
+{"_id":{"$oid":"5d433854edd6a1bc256ca0a7"},"name":"DICI"}
+{"_id":{"$oid":"5d4463cdedd6a1bc256cf42e"},"name":"NACIONAL"}
+{"_id":{"$oid":"5d447ef2edd6a1bc256cffca"},"name":"REPLICAS"}
+{"_id":{"$oid":"5d478187edd6a1bc256da54f"},"name":"ADIDAS NACIONAL"}
+{"_id":{"$oid":"5d484113edd6a1bc256dd3b4"},"name":"SIRWAY"}
+{"_id":{"$oid":"5d48415cedd6a1bc256dd3fc"},"name":"JEAN LUIS"}
+{"_id":{"$oid":"5d4845aaedd6a1bc256dd626"},"name":"PUMA NACIONAL"}
+{"_id":{"$oid":"5d48473cedd6a1bc256dd786"},"name":"VANNETI"}
+{"_id":{"$oid":"5d484837edd6a1bc256dd880"},"name":"AODIK"}
+{"_id":{"$oid":"5d499673edd6a1bc256e35cd"},"name":"DICI ADIDAS"}
+{"_id":{"$oid":"5d49d8b1edd6a1bc256e5839"},"name":"THERIEUM"}
+{"_id":{"$oid":"5d4af8eeedd6a1bc256eb4af"},"name":"MARK AIR"}
+{"_id":{"$oid":"5d4b0476edd6a1bc256eb7a9"},"name":"BY-PIERRE"}
+{"_id":{"$oid":"5d4b16ecedd6a1bc256ebd9e"},"name":"NIKE"}
+{"_id":{"$oid":"5d4b2624edd6a1bc256ec2ea"},"name":"VALENCIAGA"}
+{"_id":{"$oid":"5d4c67aaedd6a1bc256f0937"},"name":"REE"}
+{"_id":{"$oid":"5d4c8decedd6a1bc256f12de"},"name":"CHIMPUN NACIONAL"}
+{"_id":{"$oid":"5d4cb489edd6a1bc256f1d80"},"name":"FILA NACIONAL"}
+{"_id":{"$oid":"5d508e52edd6a1bc256fee2d"},"name":"BONS"}
+{"_id":{"$oid":"5d5199fbedd6a1bc25702797"},"name":"DANY BOSSE"}
+{"_id":{"$oid":"5d519b03edd6a1bc2570280c"},"name":"NAPOLES"}
+{"_id":{"$oid":"5d51a8f4edd6a1bc25702c6e"},"name":"SAN LUIS"}
+{"_id":{"$oid":"5d51abbdedd6a1bc25702ddc"},"name":"TIMBERJACK"}
+{"_id":{"$oid":"5d51ac08edd6a1bc25702e5e"},"name":"MANTARO"}
+{"_id":{"$oid":"5d589cb2edd6a1bc2571a36f"},"name":"KANUP"}
+{"_id":{"$oid":"5d597e51edd6a1bc2571d5da"},"name":"PRINCESA"}
+{"_id":{"$oid":"5d59cff4edd6a1bc2571ed80"},"name":"0DESSA"}
+{"_id":{"$oid":"5d5b0d71edd6a1bc2572552e"},"name":"BRUNO COMTTI"}
+{"_id":{"$oid":"5d61d516edd6a1bc2573c9e2"},"name":"SPIDER-MAN"}
+{"_id":{"$oid":"5d61def8edd6a1bc2573ccb2"},"name":"POLLY BARBIE"}
+{"_id":{"$oid":"5d61eca3edd6a1bc2573d146"},"name":"LOAGUNA"}
+{"_id":{"$oid":"5d62bc57edd6a1bc257401c4"},"name":"POLLYY-PRINCESA"}
+{"_id":{"$oid":"5d62d29fedd6a1bc2574087d"},"name":"JORDAN NACIONAL"}
+{"_id":{"$oid":"5d62d69eedd6a1bc25740a1f"},"name":"AQDIDAS NACIONAL"}
+{"_id":{"$oid":"5d630b98edd6a1bc25741857"},"name":"REEBOK"}
+{"_id":{"$oid":"5d766b8fedd6a1bc25782105"},"name":"Y0MAX"}
+{"_id":{"$oid":"5d9a10d0edd6a1bc257f8926"},"name":"ANJDALOZ"}
+{"_id":{"$oid":"5da11ad7edd6a1bc258109e8"},"name":"IIVANO"}
+{"_id":{"$oid":"5db9a15bedd6a1bc25861e39"},"name":"RAGIO"}
+{"_id":{"$oid":"5dbf3beaedd6a1bc25874e4c"},"name":"AIR FREE"}
+{"_id":{"$oid":"5dd81c00edd6a1bc258c893a"},"name":"NEKK"}
+{"_id":{"$oid":"5dd84c88edd6a1bc258c95e6"},"name":"BENFER"}
+{"_id":{"$oid":"5dd85c3aedd6a1bc258c9bd5"},"name":"BARBY"}
+{"_id":{"$oid":"5dd949b0edd6a1bc258cd5fe"},"name":"PONY IMPORTADA"}
+{"_id":{"$oid":"5dd94bb3edd6a1bc258cd6bc"},"name":"ZOMBIE IMPORTADO"}
+{"_id":{"$oid":"5dd954e0edd6a1bc258cd972"},"name":"VALENCIAGA ADIDAS"}
+{"_id":{"$oid":"5dd960abedd6a1bc258cdd17"},"name":"VALENCIAGA NIKE"}
+{"_id":{"$oid":"5dddd4d1edd6a1bc258dd9c0"},"name":"KOREAN"}
+{"_id":{"$oid":"5de06810edd6a1bc258e83c4"},"name":"ESPACE"}
+{"_id":{"$oid":"5de06a8aedd6a1bc258e8535"},"name":"ESPACE "}
+{"_id":{"$oid":"5de83b5fedd6a1bc25903000"},"name":"VANS FIBRA"}
+{"_id":{"$oid":"5de8495aedd6a1bc259033b9"},"name":"DICI SHOES"}
+{"_id":{"$oid":"5dee79f7edd6a1bc25918d64"},"name":"ALIGATOR"}
+{"_id":{"$oid":"5deec0dcedd6a1bc2591a1a1"},"name":"PUNTO "}
+{"_id":{"$oid":"5defd2bcedd6a1bc2591e05f"},"name":"CLIFOR "}
+{"_id":{"$oid":"5df008aaedd6a1bc2591f35a"},"name":"SANDDER"}
+{"_id":{"$oid":"5df03372edd6a1bc259203de"},"name":"FEDERLAN "}
+{"_id":{"$oid":"5df033dcedd6a1bc25920444"},"name":"FEDERLA "}
+{"_id":{"$oid":"5df036f3edd6a1bc25920736"},"name":"ANDALOZ "}
+{"_id":{"$oid":"5df1526fedd6a1bc25924a29"},"name":"KALOIS"}
+{"_id":{"$oid":"5df1546fedd6a1bc25924bfa"},"name":"KALOIS "}
+{"_id":{"$oid":"5df16482edd6a1bc2592518e"},"name":"VARELO "}
+{"_id":{"$oid":"5df17392edd6a1bc25925ad7"},"name":"WALON "}
+{"_id":{"$oid":"5df17468edd6a1bc25925bab"},"name":"WUALON "}
+{"_id":{"$oid":"5df40d18edd6a1bc2592f033"},"name":"QUELIND"}
+{"_id":{"$oid":"5df40e98edd6a1bc2592f129"},"name":"SHOCH FORCE"}
+{"_id":{"$oid":"5df41a33edd6a1bc2592f736"},"name":"CAMILA "}
+{"_id":{"$oid":"5df4f34aedd6a1bc25933038"},"name":"RIGOS"}
+{"_id":{"$oid":"5df511cfedd6a1bc25933d71"},"name":"DAMBER"}
+{"_id":{"$oid":"5df51596edd6a1bc25933ee8"},"name":"ATLETIX"}
+{"_id":{"$oid":"5df80b50edd6a1bc2593f0f0"},"name":"PIVAS"}
+{"_id":{"$oid":"5df813e0edd6a1bc2593f43a"},"name":"YOMAY"}
+{"_id":{"$oid":"5dfab2b9edd6a1bc2594889c"},"name":"ANDALOSBOTIN"}
+{"_id":{"$oid":"5dfd4103edd6a1bc25951a63"},"name":"AIR VADY KIDS"}
+{"_id":{"$oid":"5dfd5438edd6a1bc2595222b"},"name":"COREANO"}
+{"_id":{"$oid":"5dfd6690edd6a1bc2595299d"},"name":"JNJ"}
+{"_id":{"$oid":"5dfe8497edd6a1bc25956c54"},"name":"VALENCIAGA CHINO"}
+{"_id":{"$oid":"5dfe850eedd6a1bc25956ce1"},"name":"VI"}
+{"_id":{"$oid":"5dfeaad4edd6a1bc25957994"},"name":"NEW"}
+{"_id":{"$oid":"5e092344edd6a1bc2597de37"},"name":"ABC"}
+{"_id":{"$oid":"5e13bd32edd6a1bc259a2bbe"},"name":"ABC     "}
+{"_id":{"$oid":"5e13d737edd6a1bc259a357d"},"name":"ATLETIC NACIONAL"}
+{"_id":{"$oid":"5e1650a5edd6a1bc259ada9c"},"name":"REPLICA"}
+{"_id":{"$oid":"5e16721eedd6a1bc259ae57c"},"name":"PUNTODROMEDAR"}
+{"_id":{"$oid":"5e167352edd6a1bc259ae635"},"name":"LUNARLON "}
+{"_id":{"$oid":"5e168e58edd6a1bc259aef10"},"name":"MATS LOPEZ ANDALOZ"}
+{"_id":{"$oid":"5e169057edd6a1bc259af001"},"name":"CAMILA REPLICA"}
+{"_id":{"$oid":"5e1772b3edd6a1bc259b2239"},"name":"ADVENZO"}
+{"_id":{"$oid":"5e1773dfedd6a1bc259b22cc"},"name":"DIMAURUS"}
+{"_id":{"$oid":"5e17c678edd6a1bc259b3bba"},"name":"URBANAS"}
+{"_id":{"$oid":"5e18c1e4edd6a1bc259b716b"},"name":"VINCITORI"}
+{"_id":{"$oid":"5e18e491edd6a1bc259b7c8b"},"name":"VERELO"}
+{"_id":{"$oid":"5e22445dedd6a1bc259db5f3"},"name":"ZORKA"}
+{"_id":{"$oid":"5e418219edd6a1bc25a48735"},"name":"ADIDAS NACIONAL "}
+{"_id":{"$oid":"5e418e54edd6a1bc25a48d95"},"name":"NIKITA"}
+{"_id":{"$oid":"5e48afc5edd6a1bc25a64027"},"name":"DC NACIONAL"}
+{"_id":{"$oid":"5e5abda5edd6a1bc25aaadb9"},"name":"FICA"}
+{"_id":{"$oid":"5e5bd0a1edd6a1bc25aaf1be"},"name":"MARIBU"}
+{"_id":{"$oid":"5f1311e2edd6a1bc25d121fa"},"name":"RA"}
+{"_id":{"$oid":"5f515a80edd6a1bc25de8f9b"},"name":"SPORT"}
+{"_id":{"$oid":"5f53eda4edd6a1bc25df4288"},"name":"NACIONAL COREANA"}
+{"_id":{"$oid":"5f53f54bedd6a1bc25df4531"},"name":"NORTH ESTAR"}
+{"_id":{"$oid":"5f5d1086edd6a1bc25e1274b"},"name":"BEPURE VARON"}
+{"_id":{"$oid":"5f946215edd6a1bc25eca947"},"name":"I- RUN"}
+{"_id":{"$oid":"5f999b8cedd6a1bc25edcacf"},"name":"PUN"}
+{"_id":{"$oid":"5f9c7c14edd6a1bc25ee93b7"},"name":"VANS NACINAL"}
+{"_id":{"$oid":"5f9c827aedd6a1bc25ee96ce"},"name":"TEJIDO NACIONAL"}
+{"_id":{"$oid":"5f9c8c32edd6a1bc25ee9b8f"},"name":"FIBRA NACIONAL"}
+{"_id":{"$oid":"5fa58725edd6a1bc25f096d2"},"name":"GAMUZA NACIONAL"}
+{"_id":{"$oid":"5fa59230edd6a1bc25f09c5d"},"name":"MICRO FIBRA NACIONAL"}
+{"_id":{"$oid":"5fa5bb79edd6a1bc25f0aeda"},"name":"YOU"}
+{"_id":{"$oid":"5fa5bcf7edd6a1bc25f0b12f"},"name":"CORENA"}
+{"_id":{"$oid":"5fa5bd40edd6a1bc25f0b1bf"},"name":"PUMA"}
+{"_id":{"$oid":"5fa5c845edd6a1bc25f0b550"},"name":"BY TOWER"}
+{"_id":{"$oid":"5fa5c95bedd6a1bc25f0b70f"},"name":"MANGUITOS"}
+{"_id":{"$oid":"5fa5d590edd6a1bc25f0be27"},"name":"LOLA"}
+{"_id":{"$oid":"5fba7b24edd6a1bc25f5457e"},"name":"URBANA NACIONAL"}
+{"_id":{"$oid":"5fba7c63edd6a1bc25f5467c"},"name":"CAPSULA NACIONAL"}
+{"_id":{"$oid":"5fd3e2f5edd6a1bc25faa437"},"name":"VADY KIDS"}
+{"_id":{"$oid":"5fd40171edd6a1bc25fab301"},"name":"JHARSIL"}
+{"_id":{"$oid":"5fd4032fedd6a1bc25fab400"},"name":"D GERSON"}
+{"_id":{"$oid":"5fd407f4edd6a1bc25fab660"},"name":"D GERSON "}
+{"_id":{"$oid":"5fd40961edd6a1bc25fab716"},"name":"INQUIETAS"}
+{"_id":{"$oid":"5fd40b2bedd6a1bc25fab839"},"name":"LESTONI"}
+{"_id":{"$oid":"5fd40dc7edd6a1bc25fab992"},"name":"ELCRIZ"}
+{"_id":{"$oid":"5fd4105bedd6a1bc25fabae8"},"name":"ANAHI"}
+{"_id":{"$oid":"5fd4e9b6edd6a1bc25faedcd"},"name":"GUCCI"}
+{"_id":{"$oid":"5fdd102eedd6a1bc25fcaf33"},"name":"VLADY KIDS"}
+{"_id":{"$oid":"5fdd1215edd6a1bc25fcb03f"},"name":"ABC ROSE"}
+{"_id":{"$oid":"5fdd1420edd6a1bc25fcb143"},"name":"KITSS"}
+{"_id":{"$oid":"5fdd195bedd6a1bc25fcb3ce"},"name":"BABUDOG"}
+{"_id":{"$oid":"5fde3940edd6a1bc25fcff1e"},"name":"KITSS ROJAS"}
+{"_id":{"$oid":"5fde3ab3edd6a1bc25fcffde"},"name":"PIESECITOS"}
+{"_id":{"$oid":"5fde3b8aedd6a1bc25fd006c"},"name":"PASITOS"}
+{"_id":{"$oid":"5fde3c3aedd6a1bc25fd00e7"},"name":"MARQUINA"}
+{"_id":{"$oid":"5fde3e37edd6a1bc25fd023f"},"name":"CAT"}
+{"_id":{"$oid":"5fe3aff8edd6a1bc25fe3b70"},"name":"NE"}
+{"_id":{"$oid":"5feb7731edd6a1bc25fffb3a"},"name":"MAR"}
+{"_id":{"$oid":"5feb7be4edd6a1bc25fffe46"},"name":"COREANA JNJ"}
+{"_id":{"$oid":"5feb7d49edd6a1bc25ffff3f"},"name":"COREANA"}
+{"_id":{"$oid":"5feb7de7edd6a1bc25ffffd3"},"name":"COREANA "}
+{"_id":{"$oid":"5feb93f3edd6a1bc2500067b"},"name":"JERSON"}
+{"_id":{"$oid":"5feb9599edd6a1bc2500089e"},"name":"IGENIEROS"}
+{"_id":{"$oid":"5feb97c8edd6a1bc25000bab"},"name":"KAPIKA"}
+{"_id":{"$oid":"5feb9a14edd6a1bc25000d70"},"name":"CAMILUH"}
+{"_id":{"$oid":"5feba1c2edd6a1bc25001079"},"name":"DJERSON"}
+{"_id":{"$oid":"6003299eedd6a1bc250529ad"},"name":"THERION"}
+{"_id":{"$oid":"60032f06edd6a1bc25052b64"},"name":"FASHION"}
+{"_id":{"$oid":"60033d0bedd6a1bc25052fd8"},"name":"ANTHONY"}
+{"_id":{"$oid":"60034218edd6a1bc250531ab"},"name":"TIK TOK"}
+{"_id":{"$oid":"60034a50edd6a1bc25053525"},"name":"JHORDAN NACIONAL"}
+{"_id":{"$oid":"60035ea6edd6a1bc25053d7b"},"name":"KIDS"}
+{"_id":{"$oid":"6003669cedd6a1bc250540d7"},"name":"PUNTO  "}
+{"_id":{"$oid":"604a36b4edd6a1bc25152092"},"name":"MANTARO "}
+{"_id":{"$oid":"604a378fedd6a1bc251520fb"},"name":"BONSA"}
+{"_id":{"$oid":"604bc83eedd6a1bc25158661"},"name":"IVANO "}
+{"_id":{"$oid":"604ce6b2edd6a1bc2515c4c8"},"name":"PRETTY MATS"}
+{"_id":{"$oid":"604ced3fedd6a1bc2515c6bd"},"name":"MATS PIVAS NIKITA"}
+{"_id":{"$oid":"604cf9d0edd6a1bc2515cac1"},"name":"CONVER"}
+{"_id":{"$oid":"604d212eedd6a1bc2515d4f6"},"name":"PRETTY ESPACE PIVAS"}
+{"_id":{"$oid":"605e537bedd6a1bc2519c725"},"name":"UNTRALON"}
+{"_id":{"$oid":"605e64f1edd6a1bc2519cdca"},"name":"ULTRALON "}
+{"_id":{"$oid":"605f863aedd6a1bc251a0fd6"},"name":"JANOSKI"}
+{"_id":{"$oid":"605f8f3fedd6a1bc251a134b"},"name":"TIC TOC FIBRA"}
+{"_id":{"$oid":"605f932eedd6a1bc251a14cf"},"name":"TIK TOK FIBRA"}
+{"_id":{"$oid":"60634c90edd6a1bc251aeb26"},"name":"WUALO"}
+{"_id":{"$oid":"606f2898edd6a1bc251d661a"},"name":"KIDS PUNTO"}
+{"_id":{"$oid":"606f2a66edd6a1bc251d6732"},"name":"FASHION PUNTO"}
+{"_id":{"$oid":"609e88afedd6a1bc25275814"},"name":"IRUN "}
+{"_id":{"$oid":"60babb72edd6a1bc252da637"},"name":"KOREANA "}
+{"_id":{"$oid":"60d202f6edd6a1bc253292a9"},"name":"KA"}
+{"_id":{"$oid":"60d77661edd6a1bc2533b6fa"},"name":"BABYS"}
+{"_id":{"$oid":"60d77ac9edd6a1bc2533b87c"},"name":"CAMELS"}
+{"_id":{"$oid":"60d9ffdbedd6a1bc25344c72"},"name":"DCAMELS"}
+{"_id":{"$oid":"60da010bedd6a1bc25344d10"},"name":"NANCY"}
+{"_id":{"$oid":"60da028fedd6a1bc25344e20"},"name":"JUNIOR"}
+{"_id":{"$oid":"60da037dedd6a1bc25344ea2"},"name":"JHUSARI"}
+{"_id":{"$oid":"60da0480edd6a1bc25344f30"},"name":"BAIBES"}
+{"_id":{"$oid":"60db4d84edd6a1bc25349a16"},"name":"GNUZ "}
+{"_id":{"$oid":"60db4eb6edd6a1bc25349ab8"},"name":"GNUZ"}
+{"_id":{"$oid":"60db56bdedd6a1bc25349ebd"},"name":"ADBEAR"}
+{"_id":{"$oid":"60e46a3aedd6a1bc25368c9c"},"name":"KALOIS120"}
+{"_id":{"$oid":"60e47412edd6a1bc25369015"},"name":"PUNTO122"}
+{"_id":{"$oid":"60e47751edd6a1bc2536916e"},"name":"PUNTO 122"}
+{"_id":{"$oid":"60fb4231edd6a1bc253b563f"},"name":"KALOIS125"}
+{"_id":{"$oid":"60fb46f9edd6a1bc253b5813"},"name":"KALOIS130"}
+{"_id":{"$oid":"60fc9017edd6a1bc253b9f10"},"name":"BENFER-80"}
+{"_id":{"$oid":"60fca171edd6a1bc253ba556"},"name":"IVANO- 115"}
+{"_id":{"$oid":"60fca324edd6a1bc253ba61d"},"name":"IVANO-115"}
+{"_id":{"$oid":"60fca5c0edd6a1bc253ba777"},"name":"IVANO-110"}
+{"_id":{"$oid":"60fdcbf9edd6a1bc253be66a"},"name":"IVANO-120"}
+{"_id":{"$oid":"60fdd690edd6a1bc253bea17"},"name":"VANO-120"}
+{"_id":{"$oid":"60fddd4aedd6a1bc253bec5b"},"name":"NEEK-135"}
+{"_id":{"$oid":"60ff4aabedd6a1bc253c3b46"},"name":"BABUDOG-85"}
+{"_id":{"$oid":"60ff4cc8edd6a1bc253c3c5d"},"name":"VADY-85"}
+{"_id":{"$oid":"60ff4da8edd6a1bc253c3cfd"},"name":"BADY-85"}
+{"_id":{"$oid":"60ff4e8bedd6a1bc253c3d93"},"name":"VADY.85"}
+{"_id":{"$oid":"60ff50c7edd6a1bc253c3f0a"},"name":"VADY-100"}
+{"_id":{"$oid":"61007868edd6a1bc253c7d7f"},"name":"IRUN-125"}
+{"_id":{"$oid":"6100798bedd6a1bc253c7e0d"},"name":"I-RUN-125"}
+{"_id":{"$oid":"61008522edd6a1bc253c8334"},"name":"DROMEDAR-115"}
+{"_id":{"$oid":"6105b01aedd6a1bc253d9ba9"},"name":"PUMA NACIONAL-115"}
+{"_id":{"$oid":"6105b40bedd6a1bc253d9d42"},"name":"NIKE NACIONAL-115"}
+{"_id":{"$oid":"61213922edd6a1bc2543a4bf"},"name":"YOU 125"}
+{"_id":{"$oid":"61213b34edd6a1bc2543a5bc"},"name":"YOU 130"}
+{"_id":{"$oid":"61213bf5edd6a1bc2543a62d"},"name":"YUO 130"}
+{"_id":{"$oid":"61213cc2edd6a1bc2543a6a3"},"name":"YOU 135"}
+{"_id":{"$oid":"61213fb6edd6a1bc2543a850"},"name":"YOU -135"}
+{"_id":{"$oid":"612141c8edd6a1bc2543a969"},"name":"NEW ATHLETIC 140"}
+{"_id":{"$oid":"6121436cedd6a1bc2543aa41"},"name":"NEW ATHLETIC 145"}
+{"_id":{"$oid":"61214448edd6a1bc2543aabb"},"name":"NEW ATHLETIC 135"}
+{"_id":{"$oid":"612144deedd6a1bc2543ab1e"},"name":"NEW ATHLETIC145"}
+{"_id":{"$oid":"612145deedd6a1bc2543ab97"},"name":"NEW ATHLETIC-140"}
+{"_id":{"$oid":"61214864edd6a1bc2543acb3"},"name":"NEW ATHLETIC-145"}
+{"_id":{"$oid":"61214bb6edd6a1bc2543ae0a"},"name":"NEW ATHLETIC-135"}
+{"_id":{"$oid":"6121516dedd6a1bc2543b13f"},"name":"DROMEDAR-120"}
+{"_id":{"$oid":"6121539aedd6a1bc2543b29b"},"name":"DROMEDAR 120"}
+{"_id":{"$oid":"61215991edd6a1bc2543b552"},"name":"PUNTO -130"}
+{"_id":{"$oid":"61215a7eedd6a1bc2543b5c9"},"name":"PUNTO-130"}
+{"_id":{"$oid":"61215be1edd6a1bc2543b667"},"name":"PUNTO-135"}
+{"_id":{"$oid":"61215de2edd6a1bc2543b784"},"name":"BEPURE- 120"}
+{"_id":{"$oid":"61215f7fedd6a1bc2543b81e"},"name":"BEPURE 120"}
+{"_id":{"$oid":"61216684edd6a1bc2543b9e6"},"name":"YOMAX-135"}
+{"_id":{"$oid":"61216998edd6a1bc2543bb7f"},"name":"GNUZ-120"}
+{"_id":{"$oid":"61216c41edd6a1bc2543bccb"},"name":"GNUZ-125"}
+{"_id":{"$oid":"61216ed8edd6a1bc2543bdf4"},"name":"NEW SKATE-120"}
+{"_id":{"$oid":"61216fc9edd6a1bc2543be7b"},"name":"NEW-SKATE-125"}
+{"_id":{"$oid":"6121721aedd6a1bc2543bf95"},"name":"NEW SKATE-125"}
+{"_id":{"$oid":"612173caedd6a1bc2543c04d"},"name":"KAPIKA-87"}
+{"_id":{"$oid":"6121747bedd6a1bc2543c0c3"},"name":"KITSS-87"}
+{"_id":{"$oid":"612176efedd6a1bc2543c20d"},"name":"BEAR-87"}
+{"_id":{"$oid":"6121779dedd6a1bc2543c282"},"name":"BABUDOG-87"}
+{"_id":{"$oid":"612179ccedd6a1bc2543c35b"},"name":"JHUSIRE-50"}
+{"_id":{"$oid":"61217dc1edd6a1bc2543c588"},"name":"ANAHI 45"}
+{"_id":{"$oid":"61217fa1edd6a1bc2543c6a6"},"name":"JHUSARI-45"}
+{"_id":{"$oid":"612180a4edd6a1bc2543c744"},"name":"MANGUITOS-60"}
+{"_id":{"$oid":"61218301edd6a1bc2543c81e"},"name":"KEMPO-88"}
+{"_id":{"$oid":"612183b2edd6a1bc2543c8a7"},"name":"KEMPO-80"}
+{"_id":{"$oid":"6133c437edd6a1bc2547ae5f"},"name":"D-JERSON"}
+{"_id":{"$oid":"61427608edd6a1bc254ad289"},"name":"WALON 2021"}
+{"_id":{"$oid":"616edfffedd6a1bc25541b73"},"name":"KALOUIS"}
+{"_id":{"$oid":"6170a32dedd6a1bc2554dac7"},"name":"MATSS"}
+{"_id":{"$oid":"6176c2daedd6a1bc2556256e"},"name":"ANDALOS"}
+{"_id":{"$oid":"6176dfeaedd6a1bc25562cdd"},"name":"KIT"}
+{"_id":{"$oid":"6177433dedd6a1bc2556476d"},"name":"KOEREANA"}
+{"_id":{"$oid":"61789e1aedd6a1bc2556a302"},"name":"PUNTA"}
+{"_id":{"$oid":"6180560fedd6a1bc2558476f"},"name":"YUO"}
+{"_id":{"$oid":"61805662edd6a1bc255847b7"},"name":"YUO "}
+{"_id":{"$oid":"6195806eedd6a1bc255cb5eb"},"name":"ATLETI"}
+{"_id":{"$oid":"61b38ba8edd6a1bc2563de67"},"name":"BABODOG"}
+{"_id":{"$oid":"61b38c7aedd6a1bc2563dee3"},"name":"GDUCK"}
+{"_id":{"$oid":"61b3a977edd6a1bc2563e897"},"name":"YAMAX"}
+{"_id":{"$oid":"61b3cc27edd6a1bc2563f3fb"},"name":"CAT NACIONAL"}
+{"_id":{"$oid":"61c21429edd6a1bc25670d63"},"name":"BUBUDOOO"}
+{"_id":{"$oid":"61c21635edd6a1bc25670e78"},"name":"CASLON "}
+{"_id":{"$oid":"62116e30edd6a1bc2578a304"},"name":"DERION-TNG"}
+{"_id":{"$oid":"623357c7edd6a1bc2580bcca"},"name":"BLAK GOLD"}
+{"_id":{"$oid":"62335c15edd6a1bc2580be8d"},"name":"D,LOPEZ"}
+{"_id":{"$oid":"6233cd87edd6a1bc2580de41"},"name":"DEREON"}
+{"_id":{"$oid":"6237a537edd6a1bc2581b244"},"name":"IRUN -KNUP"}
+{"_id":{"$oid":"6237b561edd6a1bc2581b6b3"},"name":"TACON PANA"}
+{"_id":{"$oid":"62641004edd6a1bc258b645e"},"name":"RAGGIO PREMIUM"}
+{"_id":{"$oid":"6269cc5fedd6a1bc258cac42"},"name":"SHMACK-AMERICANO"}
+{"_id":{"$oid":"6269d249edd6a1bc258cafdc"},"name":"TNNG-PREMIUM"}
+{"_id":{"$oid":"6269df21edd6a1bc258cb5fa"},"name":"NEW BESUPMR"}
+{"_id":{"$oid":"6269e31aedd6a1bc258cb81f"},"name":"DOBOYG"}
+{"_id":{"$oid":"6269e806edd6a1bc258cba90"},"name":"BEIDITU"}
+{"_id":{"$oid":"629391f0edd6a1bc25a8b5a9"},"name":"KLOUIS"}
+{"_id":{"$oid":"629e6a22edd6a1bc25b3fd9a"},"name":"V IERI"}
+{"_id":{"$oid":"629e884cedd6a1bc25b58822"},"name":"KOREANA VALENCIA"}
+{"_id":{"$oid":"629e8bd1edd6a1bc25b5b5bd"},"name":"KOREANA TACO ESCONDIDO"}
+{"_id":{"$oid":"629e8d13edd6a1bc25b5c640"},"name":"KOREANA TACON"}
+{"_id":{"$oid":"629f8b55edd6a1bc25c284e0"},"name":"DEPORTIVO NACIONAL"}
+{"_id":{"$oid":"62ab9190edd6a1bc2577bfb6"},"name":"IRUN-LUNARLON"}
+{"_id":{"$oid":"62c85097edd6a1bc25af29c1"},"name":"CALCER"}
+{"_id":{"$oid":"62c85acfedd6a1bc25b12045"},"name":"JIXIEYANG"}
+{"_id":{"$oid":"62c85c11edd6a1bc25b15e64"},"name":"KIDS COREANA"}
+{"_id":{"$oid":"62d72a63edd6a1bc250cb9f1"},"name":"KLOUI"}
+{"_id":{"$oid":"62dc21e3edd6a1bc2521a7c3"},"name":"BKGKIDS"}
+{"_id":{"$oid":"62dc2538edd6a1bc2521b6c5"},"name":"KOREANO COOL"}
+{"_id":{"$oid":"62dc26f9edd6a1bc2521bedf"},"name":"KOREANO DUCK"}
+{"_id":{"$oid":"62dc2820edd6a1bc2521c42d"},"name":"KOREANO ADBEAR"}
+{"_id":{"$oid":"62dc2930edd6a1bc2521c900"},"name":"KOREANO KIDS"}
+{"_id":{"$oid":"62dc2c18edd6a1bc2521d637"},"name":"KOREANA KIDS"}
+{"_id":{"$oid":"62dc4ccbedd6a1bc25226336"},"name":"KOREANA JNJ"}
+{"_id":{"$oid":"62dc5c9bedd6a1bc2522a94d"},"name":"LUNARLO TRILINES"}
+{"_id":{"$oid":"62ed4770edd6a1bc251c23e8"},"name":"KIDS ESPOR"}
+{"_id":{"$oid":"62ed9002edd6a1bc251c4422"},"name":"FASHION KOREANA"}
+{"_id":{"$oid":"63000a18edd6a1bc25203134"},"name":"PAVIRT"}
+{"_id":{"$oid":"6324e497edd6a1bc25286cf9"},"name":"HITEX ANDALOZ"}
+{"_id":{"$oid":"632515a5edd6a1bc25287f56"},"name":"BABODOG JHUNIOR"}
+{"_id":{"$oid":"6325d765edd6a1bc2528a8db"},"name":"TNNG SNEAKER"}
+{"_id":{"$oid":"6325dd7dedd6a1bc2528abff"},"name":"BABUDOG KITS"}
+{"_id":{"$oid":"6340b619edd6a1bc252eb71b"},"name":"JHOVIH"}
+{"_id":{"$oid":"63447a37edd6a1bc252f82db"},"name":"PRETY"}
+{"_id":{"$oid":"63447adeedd6a1bc252f8346"},"name":"REBOK NACIONAL"}
+{"_id":{"$oid":"6352ef97edd6a1bc25328ada"},"name":"KITS"}
+{"_id":{"$oid":"635305cbedd6a1bc253293c6"},"name":"PATRICK"}
+{"_id":{"$oid":"63530c55edd6a1bc2532964b"},"name":"APOLO"}
+{"_id":{"$oid":"63530f72edd6a1bc253297c1"},"name":"MIA APOLO"}
+{"_id":{"$oid":"635315d3edd6a1bc253299e7"},"name":"PATRICK TOBILLERA"}
+{"_id":{"$oid":"6353234aedd6a1bc25329ed7"},"name":"PATRICK "}
+{"_id":{"$oid":"6353340fedd6a1bc2532a5a8"},"name":"ZARELLI"}
+{"_id":{"$oid":"6356b3fbedd6a1bc2533d794"},"name":"JANOSKI NIKE"}
+{"_id":{"$oid":"635aeacdedd6a1bc2534c317"},"name":"BOSSE KLOUIS"}
+{"_id":{"$oid":"637e3c5eedd6a1bc253c2fc5"},"name":"CHINO"}
+{"_id":{"$oid":"637e4c10edd6a1bc253c36a3"},"name":"RUNNING"}
+{"_id":{"$oid":"638931baedd6a1bc253e7c12"},"name":"TRINIESS"}
+{"_id":{"$oid":"638f75adedd6a1bc253fd0df"},"name":"CHINITA "}
+{"_id":{"$oid":"638f7c35edd6a1bc253fd451"},"name":"VADUDOG"}
+{"_id":{"$oid":"638f8281edd6a1bc253fd793"},"name":"CHINO-KIT"}
+{"_id":{"$oid":"6399fea5edd6a1bc254227fb"},"name":"ANDINISTA"}
+{"_id":{"$oid":"63a093ceedd6a1bc25438b98"},"name":"I-FREE"}
+{"_id":{"$oid":"63a099a6edd6a1bc25438e33"},"name":"CHINO GOMA"}
+{"_id":{"$oid":"63a0fbb3edd6a1bc2543b384"},"name":"KLOIS ESCAVADOR"}
+{"_id":{"$oid":"63a1d490edd6a1bc2543e583"},"name":"UNDER MACK"}
+{"_id":{"$oid":"63a20702edd6a1bc2543f641"},"name":"JUTU"}
+{"_id":{"$oid":"63a4e683edd6a1bc2544a07c"},"name":"KAIDA"}
+{"_id":{"$oid":"63a4ee86edd6a1bc2544a4f7"},"name":"OP"}
+{"_id":{"$oid":"63a4f183edd6a1bc2544a6a6"},"name":"OP KIDS"}
+{"_id":{"$oid":"63a5f6daedd6a1bc2544e21b"},"name":"UNTRA"}
+{"_id":{"$oid":"63ae1836edd6a1bc2546bf64"},"name":"DUCK BBQ KIT"}
+{"_id":{"$oid":"63d6ff9aedd6a1bc254f5b03"},"name":"DARMIC"}
+{"_id":{"$oid":"63e56eadedd6a1bc25526463"},"name":"BRITANI "}
+{"_id":{"$oid":"63f38df6edd6a1bc2555e978"},"name":"CHINITA GOMA"}
+{"_id":{"$oid":"63fbe57cedd6a1bc2557b256"},"name":"CON"}
+{"_id":{"$oid":"6407d58fedd6a1bc255a3e3b"},"name":"ESPACE PRETY MATS"}
+{"_id":{"$oid":"640dfc47edd6a1bc255b8f62"},"name":"IMPORTADOS VARIOS"}
+{"_id":{"$oid":"640e024bedd6a1bc255b90f8"},"name":"IMPORTADO VARIOS"}
+{"_id":{"$oid":"640e04e8edd6a1bc255b91d0"},"name":"NACIONALES VARIOS"}
+{"_id":{"$oid":"640e2401edd6a1bc255b991e"},"name":"KOREANO "}
+{"_id":{"$oid":"642300bfedd6a1bc2560048d"},"name":"KOREANA JUTU"}
+{"_id":{"$oid":"64231c7cedd6a1bc25600f9e"},"name":"KOREANO PREMIUM"}
+{"_id":{"$oid":"64239100edd6a1bc25602ff7"},"name":"VADY-KITS"}
+{"_id":{"$oid":"64239460edd6a1bc2560323e"},"name":"CASLON"}
+{"_id":{"$oid":"64494b92edd6a1bc2568a5a5"},"name":"LONA "}
+{"_id":{"$oid":"64505a89edd6a1bc256a2fb3"},"name":"C-DUCK COOL"}
+{"_id":{"$oid":"645138cbedd6a1bc256a5f47"},"name":"CLASLON"}
+{"_id":{"$oid":"6451397cedd6a1bc256a5fc6"},"name":"BABDOUNEW"}
+{"_id":{"$oid":"6481288bedd6a1bc2574eab5"},"name":"IMPERIO"}
+{"_id":{"$oid":"648129b0edd6a1bc2574eb36"},"name":"ANDALOZ PRETY"}
+{"_id":{"$oid":"648276a5edd6a1bc25753168"},"name":"RANNGO"}
+{"_id":{"$oid":"648ce9a6edd6a1bc25779b83"},"name":"RANGO"}
+{"_id":{"$oid":"648cf014edd6a1bc25779d4e"},"name":"D-LOPEZ"}
+{"_id":{"$oid":"648d08daedd6a1bc2577a34b"},"name":"FOLKI"}
+{"_id":{"$oid":"648e2749edd6a1bc2577e3e1"},"name":"VADY KITS"}
+{"_id":{"$oid":"648e3d45edd6a1bc2577ea63"},"name":"DEERWAY"}
+{"_id":{"$oid":"648e3e12edd6a1bc2577eae7"},"name":"TWHQTKIDS"}
+{"_id":{"$oid":"648e4051edd6a1bc2577ec62"},"name":"DORAEMMON"}
+{"_id":{"$oid":"649b1752edd6a1bc257aac81"},"name":"QUILO"}
+{"_id":{"$oid":"64c2cb79edd6a1bc2583169d"},"name":"DUCK KITS"}
+{"_id":{"$oid":"64c2d05cedd6a1bc25831909"},"name":"DORAEMON"}
+{"_id":{"$oid":"64c2da77edd6a1bc25831df5"},"name":"MIFAITO"}
+{"_id":{"$oid":"64c2e56dedd6a1bc258322e6"},"name":"KOREANA ENIXUS"}
+{"_id":{"$oid":"64c2e691edd6a1bc25832375"},"name":"KOREANO ENIXUS"}
+{"_id":{"$oid":"64c2e9cbedd6a1bc25832548"},"name":"KORANO ENIXUS"}
+{"_id":{"$oid":"64e948dbedd6a1bc258b4392"},"name":"ADDALOS"}
+{"_id":{"$oid":"64ed3ccaedd6a1bc258c15c2"},"name":"JIMIPAND"}
+{"_id":{"$oid":"64ed424fedd6a1bc258c175e"},"name":"RASE DUCK"}
+{"_id":{"$oid":"64ed4461edd6a1bc258c1885"},"name":"GDUCK COOL"}
+{"_id":{"$oid":"64ed4749edd6a1bc258c1a0a"},"name":"G DUCK COOL"}
+{"_id":{"$oid":"64ee2982edd6a1bc258c499a"},"name":"KITSS SPORTS"}
+{"_id":{"$oid":"64ee2b7bedd6a1bc258c4ad5"},"name":"TWHQTKITDS"}
+{"_id":{"$oid":"64ee2c4eedd6a1bc258c4b60"},"name":"KDM"}
+{"_id":{"$oid":"6503aa23edd6a1bc2590dd63"},"name":"COREANA IRUN"}
+{"_id":{"$oid":"6504e8a7edd6a1bc259120c0"},"name":"LONA"}
+{"_id":{"$oid":"652ffe91edd6a1bc259a1733"},"name":"WALKING"}
+{"_id":{"$oid":"653082a5edd6a1bc259a39be"},"name":"ABC GOOD"}
+{"_id":{"$oid":"65313a6dedd6a1bc259a5f88"},"name":"JIANLEXIONG"}
+{"_id":{"$oid":"653140f5edd6a1bc259a62f4"},"name":"KIDS SPORT"}
+{"_id":{"$oid":"65314e3eedd6a1bc259a6929"},"name":"KOREANA-JUTU"}
+{"_id":{"$oid":"65331ad6edd6a1bc259ad674"},"name":"PUTO"}
+{"_id":{"$oid":"65692bb10664652ec873e349"},"name":"CAFEIMAO"}
+{"_id":{"$oid":"65692c9d0664652ec873e400"},"name":"VABUDOG"}
+{"_id":{"$oid":"65692ec40664652ec873e681"},"name":"KAFEIMAO"}
+{"_id":{"$oid":"6569324f0664652ec873e86e"},"name":"KIDSSPORTS"}
+{"_id":{"$oid":"656ca8b50664652ec874b7ca"},"name":"DIMUTO"}
+{"_id":{"$oid":"656ca9c80664652ec874b86b"},"name":"MINI MIFEI"}
+{"_id":{"$oid":"656caaeb0664652ec874b907"},"name":"KITS NSEVEN"}
